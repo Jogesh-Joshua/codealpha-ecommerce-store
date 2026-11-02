@@ -5,6 +5,7 @@
  * Default-exports the configured Express application.
  */
 
+import express from 'express';
 import { loadConfig } from './config.js';
 import { createPool } from './db/pool.js';
 import { createApp } from './createApp.js';
