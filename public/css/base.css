@@ -1,0 +1,215 @@
+/**
+ * public/css/base.css
+ *
+ * Deskline Design System — CSS Reset, Base Typography & Accessibility (Sections B, C, D).
+ * Strictly uses CSS custom properties defined in tokens.css.
+ */
+
+/* ── Reset & Box Sizing ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-padding-top: calc(var(--header-height) + var(--space-4));
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-fog);
+  color: var(--color-pine);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Typography Scale (Section C) ── */
+.display-xl {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.75rem, 5vw + 1rem, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+h1, .heading-1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.125rem, 3.5vw + 0.5rem, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+h2, .heading-2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.625rem, 2vw + 0.5rem, 2.375rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+h3, .heading-3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1vw + 0.5rem, 1.625rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.body-lg {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1.0625rem, 0.5vw + 0.75rem, 1.125rem);
+  line-height: 1.55;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+p, .body-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.ui-strong {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.375;
+}
+
+small, .small {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.38;
+  letter-spacing: 0.005em;
+}
+
+.price-lg {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.625rem, 1vw + 1rem, 1.875rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.price-md {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Links & Running Text ── */
+p a, .prose a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-thickness var(--dur-fast) var(--ease-out);
+}
+
+p a:hover, .prose a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ── Focus Management (Section B) ── */
+:focus-visible {
+  outline: 2px solid var(--color-pine);
+  outline-offset: 3px;
+}
+
+.on-dark :focus-visible,
+.site-footer :focus-visible,
+.announcement-bar :focus-visible {
+  outline: 2px solid var(--color-marigold);
+  outline-offset: 3px;
+}
+
+/* ── Accessibility: Skip Link (Section E0) ── */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: var(--space-4);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-pine);
+  color: var(--color-paper);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* ── Accessibility: Screen Reader Only ── */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Reduced Motion (Section D.10) ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

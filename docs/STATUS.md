@@ -7,7 +7,7 @@ Commit: 49c0957 | Date: 2026-11-02 | Test DB branch: test | Deployed URL: <not d
 
 ## Summary
 Tests: PASS 26 | FAIL 0 | BLOCKED 0 | N/A 0 | NOT RUN 158 | STALE 0
-Test runner: 224 tests across 44 suites | pass 224 | fail 0 | skipped 0
+Test runner: 240 tests across 51 suites | pass 240 | fail 0 | skipped 0
 Acceptance criteria: PASS 0 of 55 | not yet passing: all (all ACs remain NOT RUN until full feature verification)
 
 ## Phase 0 gate tests (actually run on 2026-11-01)
@@ -338,3 +338,4 @@ Acceptance criteria: PASS 0 of 55 | not yet passing: all (all ACs remain NOT RUN
 | 2026-11-02 | Fixed .env.test BOM encoding and direct endpoint URL; updated DB-03 assertions to accept PostgreSQL 23001 (restrict_violation) alongside 23503 for ON DELETE RESTRICT | Corrected configuration and standard PostgreSQL RESTRICT error code; all Phase 1 DB gate tests DB-01..DB-08, DB-11..DB-13 pass |
 | 2026-11-02 | Phase 2 implemented: createApp, src/lib/numbers.js, src/db/pool.js, requestId, logging, errorHandler, originGuard, health routes, vercel.json, scripts/dev-server.js | Per implementation order §10 Phase 2. Local gate tests UT-13, UT-14, API-01, API-02, SECT-04..SECT-08, SECT-10, STAT-08, STAT-13 all PASS (224/224 tests in full runner) |
 | 2026-11-02 | Added explicit `import express from 'express'` to `src/app.js` | Satisfies Vercel CLI zero-config Express framework scanner check without altering architecture; all 224 test runner tests and 32 static tests confirmed PASS; DEP gates remain NOT RUN until verified on live Vercel deployment |
+| 2026-11-04 | Implemented storefront pages (`index.html`, `shop.html`), design system CSS (`tokens.css`, `base.css`, `components.css`, `pages.css`), favicon/placeholders, and portable static asset middleware before 404 handler | Resolves storefront 404s on Vercel and local dev; keeps `express.static` out of `src/` (STAT-08 PASS); 16 new automated storefront integration tests added; full runner 240/240 tests pass across 51 suites |

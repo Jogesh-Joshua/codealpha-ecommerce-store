@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all desk accessories. Mats, stands, lamps, chargers and organizers for your workspace.">
+  <meta name="theme-color" content="#EDEFEA">
+  <title>Shop — Deskline</title>
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+  <!-- Accessibility: Skip Link (Section E0) -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Announcement Bar (Section E0) -->
+  <div class="announcement-bar" role="region" aria-label="Store announcement">
+    Demo store. Orders are saved, nothing ships, and no payment is taken.
+  </div>
+
+  <!-- Header (Section E0) -->
+  <header class="site-header">
+    <div class="container header-container">
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="brand-logo" aria-label="Deskline home">Deskline</a>
+        <a href="/shop" class="nav-link" aria-current="page">Shop</a>
+        <a href="/#categories" class="nav-link">Categories</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/login" class="nav-link">Sign in</a>
+        <a href="/cart" class="cart-link" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Cart</span>
+          <span class="cart-badge" data-count="0"></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content" id="main">
+    <div class="container">
+      <!-- Title Row (Section E2) -->
+      <div class="shop-header">
+        <h1 class="heading-1" id="shop-title">Shop</h1>
+        <span class="small" id="result-count" aria-live="polite">21 products</span>
+      </div>
+
+      <!-- Toolbar: Search & Sort (Section E2) -->
+      <div class="shop-toolbar">
+        <div class="shop-search">
+          <label for="search" class="visually-hidden">Search products</label>
+          <input type="search" id="search" placeholder="Search desk mats, stands, lamps…" class="field-input" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="shop-sort">
+          <label for="sort-select" class="small">Sort by</label>
+          <select id="sort-select" class="field-select" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price_asc">Price: low to high</option>
+            <option value="price_desc">Price: high to low</option>
+            <option value="newest">Newest</option>
+            <option value="name_asc">Name: A to Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category Chips (Section E2 & F) -->
+      <div class="shop-chips" role="group" aria-label="Filter by category">
+        <a href="/shop" class="chip active" aria-pressed="true">All</a>
+        <a href="/shop?category=desk-mats" class="chip" aria-pressed="false">Desk mats</a>
+        <a href="/shop?category=charging-cables" class="chip" aria-pressed="false">Charging &amp; cables</a>
+        <a href="/shop?category=stands-risers" class="chip" aria-pressed="false">Stands &amp; risers</a>
+        <a href="/shop?category=lighting" class="chip" aria-pressed="false">Lighting</a>
+        <a href="/shop?category=organizers" class="chip" aria-pressed="false">Organizers</a>
+      </div>
+
+      <!-- Product Catalogue Grid (Section E2) -->
+      <div class="shop-grid" id="product-grid">
+        <!-- Product 1 -->
+        <article class="product-card">
+          <a href="/product?slug=felt-desk-mat-charcoal" class="card-image-well" aria-label="Felt desk mat, charcoal">
+            <img src="/images/placeholders/desk-mats.svg" alt="Charcoal felt desk mat flat on a desk" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=felt-desk-mat-charcoal">Felt desk mat, charcoal</a></h2>
+            <p class="card-category">Desk mats</p>
+            <p class="card-price">₹1,499</p>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card">
+          <a href="/product?slug=felt-desk-mat-moss" class="card-image-well" aria-label="Felt desk mat, moss">
+            <img src="/images/placeholders/desk-mats.svg" alt="Moss green wool-blend felt desk mat" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=felt-desk-mat-moss">Felt desk mat, moss</a></h2>
+            <p class="card-category">Desk mats</p>
+            <p class="card-price">₹1,499</p>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card">
+          <a href="/product?slug=leather-desk-pad-tan" class="card-image-well" aria-label="Leather desk pad, tan">
+            <img src="/images/placeholders/desk-mats.svg" alt="Full-grain vegetable-tanned leather desk pad" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=leather-desk-pad-tan">Leather desk pad, tan</a></h2>
+            <p class="card-category">Desk mats</p>
+            <p class="card-price">₹2,299</p>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-card">
+          <a href="/product?slug=cork-desk-mat" class="card-image-well" aria-label="Cork desk mat">
+            <img src="/images/placeholders/desk-mats.svg" alt="Natural fine-grain cork desk mat" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=cork-desk-mat">Cork desk mat</a></h2>
+            <p class="card-category">Desk mats</p>
+            <p class="card-price">₹1,199</p>
+          </div>
+        </article>
+
+        <!-- Product 5 -->
+        <article class="product-card">
+          <a href="/product?slug=braided-usb-c-cable" class="card-image-well" aria-label="Braided USB-C to USB-C cable">
+            <img src="/images/placeholders/charging-cables.svg" alt="Durable braided 2-metre USB-C cable" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=braided-usb-c-cable">Braided USB-C to USB-C cable</a></h2>
+            <p class="card-category">Charging &amp; cables</p>
+            <p class="card-price">₹699</p>
+          </div>
+        </article>
+
+        <!-- Product 6 -->
+        <article class="product-card">
+          <a href="/product?slug=magnetic-wireless-charger" class="card-image-well" aria-label="3-in-1 magnetic wireless charger">
+            <img src="/images/placeholders/charging-cables.svg" alt="Matte black 3-in-1 magnetic wireless charging stand" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=magnetic-wireless-charger">3-in-1 magnetic wireless charger</a></h2>
+            <p class="card-category">Charging &amp; cables</p>
+            <p class="card-price">₹3,299</p>
+          </div>
+        </article>
+
+        <!-- Product 7 -->
+        <article class="product-card">
+          <a href="/product?slug=gan-dual-port-charger" class="card-image-well" aria-label="65W GaN dual-port charger">
+            <img src="/images/placeholders/charging-cables.svg" alt="Compact GaN wall charger with dual USB-C ports" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=gan-dual-port-charger">65W GaN dual-port charger</a></h2>
+            <p class="card-category">Charging &amp; cables</p>
+            <p class="card-price">₹1,899</p>
+          </div>
+        </article>
+
+        <!-- Product 8 -->
+        <article class="product-card">
+          <a href="/product?slug=wireless-charging-tray" class="card-image-well" aria-label="Wireless charging tray">
+            <img src="/images/placeholders/charging-cables.svg" alt="Felt-lined walnut valet tray with Qi fast charging" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=wireless-charging-tray">Wireless charging tray</a></h2>
+            <p class="card-category">Charging &amp; cables</p>
+            <p class="card-price">₹2,499</p>
+          </div>
+        </article>
+
+        <!-- Product 9 -->
+        <article class="product-card">
+          <a href="/product?slug=aluminium-laptop-stand" class="card-image-well" aria-label="Aluminium laptop stand">
+            <img src="/images/placeholders/stands-risers.svg" alt="Precision-milled aluminium laptop riser" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=aluminium-laptop-stand">Aluminium laptop stand</a></h2>
+            <p class="card-category">Stands &amp; risers</p>
+            <p class="card-price">₹2,199</p>
+          </div>
+        </article>
+
+        <!-- Product 10 -->
+        <article class="product-card">
+          <a href="/product?slug=walnut-monitor-riser" class="card-image-well" aria-label="Walnut monitor riser">
+            <img src="/images/placeholders/stands-risers.svg" alt="Solid American walnut monitor shelf with steel legs" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=walnut-monitor-riser">Walnut monitor riser</a></h2>
+            <p class="card-category">Stands &amp; risers</p>
+            <p class="card-price">₹3,899</p>
+          </div>
+        </article>
+
+        <!-- Product 11 -->
+        <article class="product-card">
+          <a href="/product?slug=vertical-laptop-dock" class="card-image-well" aria-label="Vertical laptop dock">
+            <img src="/images/placeholders/stands-risers.svg" alt="Heavyweight aluminium vertical laptop dock" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=vertical-laptop-dock">Vertical laptop dock</a></h2>
+            <p class="card-category">Stands &amp; risers</p>
+            <p class="card-price">₹1,699</p>
+          </div>
+        </article>
+
+        <!-- Product 12 -->
+        <article class="product-card">
+          <a href="/product?slug=monitor-light-bar" class="card-image-well" aria-label="Monitor light bar">
+            <img src="/images/placeholders/lighting.svg" alt="Slim monitor-mounted light bar with touch dimming" class="card-image" width="400" height="500" loading="lazy">
+          </a>
+          <div class="card-details">
+            <h2 class="card-name"><a href="/product?slug=monitor-light-bar">Monitor light bar</a></h2>
+            <p class="card-category">Lighting</p>
+            <p class="card-price">₹3,499</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Pagination (Section E2 & F) -->
+      <nav class="pagination" aria-label="Pagination">
+        <a href="/shop?page=1" class="pagination-item active" aria-current="page">1</a>
+        <a href="/shop?page=2" class="pagination-item">2</a>
+        <a href="/shop?page=2" class="pagination-item" aria-label="Next page">&rarr;</a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Footer (Section E0) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <span class="brand-logo on-dark">Deskline</span>
+          <p class="footer-link">Accessories for the desk you work at.</p>
+          <p class="caption on-dark-muted">This is a demo store built for the CodeAlpha Full Stack internship. Products are fictional.</p>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">Shop</h3>
+          <a href="/shop" class="footer-link">All products</a>
+          <a href="/shop?category=desk-mats" class="footer-link">Desk mats</a>
+          <a href="/shop?category=charging-cables" class="footer-link">Charging &amp; cables</a>
+          <a href="/shop?category=stands-risers" class="footer-link">Stands &amp; risers</a>
+          <a href="/shop?category=lighting" class="footer-link">Lighting</a>
+          <a href="/shop?category=organizers" class="footer-link">Organizers</a>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">Account</h3>
+          <a href="/login" class="footer-link">Sign in</a>
+          <a href="/register" class="footer-link">Create account</a>
+          <a href="/orders" class="footer-link">Your orders</a>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">About</h3>
+          <p class="caption on-dark-muted">CodeAlpha Internship Task 1 — Full-stack e-commerce project with PostgreSQL, Express, and modern standards-compliant web technologies.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Deskline. Demo store, no real orders.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

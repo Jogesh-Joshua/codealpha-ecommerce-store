@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#E2E6DF"/>
+  <!-- Top-down desk scene flatlay -->
+  <rect x="100" y="80" width="600" height="340" rx="16" fill="#14302A" opacity="0.12"/>
+  <rect x="110" y="90" width="580" height="320" rx="12" fill="#F8F9F6"/>
+  <!-- Keyboard representation -->
+  <rect x="220" y="160" width="360" height="130" rx="8" fill="#14302A" opacity="0.8"/>
+  <!-- Mouse representation -->
+  <rect x="610" y="190" width="50" height="80" rx="20" fill="#14302A" opacity="0.7"/>
+  <!-- Desk lamp representation -->
+  <circle cx="160" cy="140" r="40" fill="#F2B632" opacity="0.3"/>
+  <circle cx="160" cy="140" r="20" fill="#F2B632"/>
+  <!-- Tray representation -->
+  <rect x="150" y="240" width="60" height="120" rx="6" fill="#14302A" opacity="0.2"/>
+</svg>
+

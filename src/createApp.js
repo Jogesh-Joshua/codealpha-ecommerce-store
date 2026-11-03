@@ -17,6 +17,7 @@ import { loggingMiddleware } from './middleware/logging.js';
 import { originGuardMiddleware } from './middleware/originGuard.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';
 import { createHealthRouter } from './routes/health.js';
+import { createStaticAssetsMiddleware } from './middleware/staticAssets.js';
 
 /**
  * Build and return the configured Express application.
@@ -26,9 +27,10 @@ import { createHealthRouter } from './routes/health.js';
  * @param {Function} [options.logSink]
  * @param {import('pg').Pool} [options.pool]
  * @param {Function} [options.configureRoutes] Optional callback to mount routes before 404 handlers.
+ * @param {string} [options.publicDir] Optional path to public directory for static asset serving.
  * @returns {import('express').Express}
  */
-export function createApp({ config, logSink, pool, configureRoutes } = {}) {
+export function createApp({ config, logSink, pool, configureRoutes, publicDir } = {}) {
   if (!config) {
     throw new Error('createApp: config is required');
   }
@@ -61,15 +63,18 @@ export function createApp({ config, logSink, pool, configureRoutes } = {}) {
   // 7. Core routes
   app.use('/api', createHealthRouter({ pool }));
 
-  // Optional custom/extra route configuration before 404 handlers
+  // Optional custom/extra route configuration before static & 404 handlers
   if (typeof configureRoutes === 'function') {
     configureRoutes(app);
   }
 
-  // 8. 404 Handler (JSON for /api/*, HTML for non-API)
+  // 8. Storefront & Static asset serving before 404 handler (§9.2, DR-08)
+  app.use(createStaticAssetsMiddleware({ publicDir }));
+
+  // 9. 404 Handler (JSON for /api/*, HTML for non-API)
   app.use(notFoundHandler());
 
-  // 9. Centralized Error Handler
+  // 10. Centralized Error Handler
   app.use(errorHandler());
 
   return app;

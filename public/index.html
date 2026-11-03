@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessories for the desk you work at. Mats, stands, lamps, chargers and organizers.">
+  <meta name="theme-color" content="#EDEFEA">
+  <title>Deskline — Accessories for the desk you work at</title>
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+  <!-- Accessibility: Skip Link (Section E0) -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Announcement Bar (Section E0) -->
+  <div class="announcement-bar" role="region" aria-label="Store announcement">
+    Demo store. Orders are saved, nothing ships, and no payment is taken.
+  </div>
+
+  <!-- Header (Section E0) -->
+  <header class="site-header">
+    <div class="container header-container">
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="brand-logo" aria-label="Deskline home">Deskline</a>
+        <a href="/shop" class="nav-link">Shop</a>
+        <a href="#categories" class="nav-link">Categories</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/shop#search" class="icon-button" aria-label="Search products">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+        <a href="/login" class="nav-link">Sign in</a>
+        <a href="/cart" class="cart-link" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Cart</span>
+          <span class="cart-badge" data-count="0"></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content" id="main">
+    <!-- Hero Section (Section E1) -->
+    <section class="section hero-section" aria-label="Introduction">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 class="display-xl">Accessories for the desk you work at</h1>
+          <p class="body-lg">Mats, stands, lamps, chargers and organizers. Chosen to look good and stay out of the way.</p>
+          <div class="hero-actions">
+            <a href="/shop" class="button button-primary button-lg">Shop all products</a>
+            <a href="#categories" class="button button-text">Browse categories</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <picture>
+            <source srcset="/images/hero-flatlay.svg" type="image/svg+xml">
+            <img src="/images/hero-flatlay.svg" alt="Tidy top-down view of a workstation with felt desk mat, lamp, and laptop stand" class="hero-image" width="800" height="600" fetchpriority="high">
+          </picture>
+          <!-- Interactive Hotspots (Section E1) -->
+          <a href="/shop?category=desk-mats" class="hotspot" data-slot="1" aria-label="Felt desk mat, ₹1,499">
+            <span class="hotspot-dot" aria-hidden="true"></span>
+            <span class="hotspot-label">
+              <span>Felt desk mat</span>
+              <span class="hotspot-price">₹1,499</span>
+            </span>
+          </a>
+          <a href="/shop?category=lighting" class="hotspot" data-slot="2" aria-label="Desk lamp, ₹2,899">
+            <span class="hotspot-dot" aria-hidden="true"></span>
+            <span class="hotspot-label">
+              <span>Desk lamp</span>
+              <span class="hotspot-price">₹2,899</span>
+            </span>
+          </a>
+          <a href="/shop?category=stands-risers" class="hotspot" data-slot="3" aria-label="Laptop stand, ₹2,199">
+            <span class="hotspot-dot" aria-hidden="true"></span>
+            <span class="hotspot-label">
+              <span>Laptop stand</span>
+              <span class="hotspot-price">₹2,199</span>
+            </span>
+          </a>
+          <a href="/shop?category=organizers" class="hotspot" data-slot="4" aria-label="Walnut tray, ₹1,299">
+            <span class="hotspot-dot" aria-hidden="true"></span>
+            <span class="hotspot-label">
+              <span>Walnut tray</span>
+              <span class="hotspot-price">₹1,299</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop by Category Section (Section E1) -->
+    <section class="section" id="categories" aria-labelledby="categories-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="heading-2" id="categories-heading">Shop by category</h2>
+        </div>
+        <div class="category-list">
+          <a href="/shop?category=desk-mats" class="category-row">
+            <span class="heading-3">Desk mats</span>
+            <span class="category-meta">
+              <span class="small text-secondary">4 products</span>
+              <span class="category-arrow" aria-hidden="true">&rarr;</span>
+            </span>
+          </a>
+          <a href="/shop?category=charging-cables" class="category-row">
+            <span class="heading-3">Charging &amp; cables</span>
+            <span class="category-meta">
+              <span class="small text-secondary">4 products</span>
+              <span class="category-arrow" aria-hidden="true">&rarr;</span>
+            </span>
+          </a>
+          <a href="/shop?category=stands-risers" class="category-row">
+            <span class="heading-3">Stands &amp; risers</span>
+            <span class="category-meta">
+              <span class="small text-secondary">5 products</span>
+              <span class="category-arrow" aria-hidden="true">&rarr;</span>
+            </span>
+          </a>
+          <a href="/shop?category=lighting" class="category-row">
+            <span class="heading-3">Lighting</span>
+            <span class="category-meta">
+              <span class="small text-secondary">4 products</span>
+              <span class="category-arrow" aria-hidden="true">&rarr;</span>
+            </span>
+          </a>
+          <a href="/shop?category=organizers" class="category-row">
+            <span class="heading-3">Organizers</span>
+            <span class="category-meta">
+              <span class="small text-secondary">4 products</span>
+              <span class="category-arrow" aria-hidden="true">&rarr;</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products Section (Section E1) -->
+    <section class="section" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="heading-2" id="featured-heading">Featured products</h2>
+          <a href="/shop" class="button button-text">View all products</a>
+        </div>
+        <div class="featured-grid">
+          <!-- Featured Product 1 -->
+          <article class="product-card">
+            <a href="/product?slug=felt-desk-mat-charcoal" class="card-image-well" aria-label="Felt desk mat, charcoal">
+              <img src="/images/placeholders/desk-mats.svg" alt="Charcoal wool-blend felt desk mat on a desk" class="card-image" width="400" height="500" loading="lazy">
+            </a>
+            <div class="card-details">
+              <h3 class="card-name"><a href="/product?slug=felt-desk-mat-charcoal">Felt desk mat, charcoal</a></h3>
+              <p class="card-category">Desk mats</p>
+              <p class="card-price">₹1,499</p>
+            </div>
+          </article>
+
+          <!-- Featured Product 2 -->
+          <article class="product-card">
+            <a href="/product?slug=monitor-light-bar" class="card-image-well" aria-label="Monitor light bar">
+              <img src="/images/placeholders/lighting.svg" alt="Slim monitor-mounted light bar with adjustable warmth" class="card-image" width="400" height="500" loading="lazy">
+            </a>
+            <div class="card-details">
+              <h3 class="card-name"><a href="/product?slug=monitor-light-bar">Monitor light bar</a></h3>
+              <p class="card-category">Lighting</p>
+              <p class="card-price">₹3,499</p>
+            </div>
+          </article>
+
+          <!-- Featured Product 3 -->
+          <article class="product-card">
+            <a href="/product?slug=aluminium-laptop-stand" class="card-image-well" aria-label="Aluminium laptop stand">
+              <img src="/images/placeholders/stands-risers.svg" alt="Precision-milled aluminium laptop riser" class="card-image" width="400" height="500" loading="lazy">
+            </a>
+            <div class="card-details">
+              <h3 class="card-name"><a href="/product?slug=aluminium-laptop-stand">Aluminium laptop stand</a></h3>
+              <p class="card-category">Stands &amp; risers</p>
+              <p class="card-price">₹2,199</p>
+            </div>
+          </article>
+
+          <!-- Featured Product 4 -->
+          <article class="product-card">
+            <a href="/product?slug=wireless-charging-tray" class="card-image-well" aria-label="Wireless charging tray">
+              <img src="/images/placeholders/charging-cables.svg" alt="Felt-lined walnut valet tray with Qi fast charging" class="card-image" width="400" height="500" loading="lazy">
+            </a>
+            <div class="card-details">
+              <h3 class="card-name"><a href="/product?slug=wireless-charging-tray">Wireless charging tray</a></h3>
+              <p class="card-category">Charging &amp; cables</p>
+              <p class="card-price">₹2,499</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Spotlight Panel (Section E1) -->
+        <div class="spotlight-panel" role="region" aria-label="Product spotlight">
+          <div class="spotlight-image-well">
+            <img src="/images/placeholders/lighting.svg" alt="Monitor light bar cast light across a clean workspace" class="card-image" width="500" height="500" loading="lazy">
+          </div>
+          <div class="spotlight-content">
+            <h2 class="heading-2 on-dark">Monitor light bar</h2>
+            <p class="spotlight-summary">Sits atop your monitor to illuminate your desk surface without causing screen glare or wasting desk space.</p>
+            <p class="spotlight-price">₹3,499</p>
+            <div class="spotlight-actions">
+              <a href="/product?slug=monitor-light-bar" class="button button-inverted button-lg">View product</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Section E0) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <span class="brand-logo on-dark">Deskline</span>
+          <p class="footer-link">Accessories for the desk you work at.</p>
+          <p class="caption on-dark-muted">This is a demo store built for the CodeAlpha Full Stack internship. Products are fictional.</p>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">Shop</h3>
+          <a href="/shop" class="footer-link">All products</a>
+          <a href="/shop?category=desk-mats" class="footer-link">Desk mats</a>
+          <a href="/shop?category=charging-cables" class="footer-link">Charging &amp; cables</a>
+          <a href="/shop?category=stands-risers" class="footer-link">Stands &amp; risers</a>
+          <a href="/shop?category=lighting" class="footer-link">Lighting</a>
+          <a href="/shop?category=organizers" class="footer-link">Organizers</a>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">Account</h3>
+          <a href="/login" class="footer-link">Sign in</a>
+          <a href="/register" class="footer-link">Create account</a>
+          <a href="/orders" class="footer-link">Your orders</a>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">About</h3>
+          <p class="caption on-dark-muted">CodeAlpha Internship Task 1 — Full-stack e-commerce project with PostgreSQL, Express, and modern standards-compliant web technologies.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Deskline. Demo store, no real orders.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

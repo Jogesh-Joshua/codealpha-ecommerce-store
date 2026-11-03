@@ -1,0 +1,435 @@
+/**
+ * public/css/pages.css
+ *
+ * Deskline Design System — Page Layouts: Home, Shop & Storefront (Sections E1 & E2).
+ * Strictly uses CSS custom properties defined in tokens.css.
+ */
+
+/* ── Global Layout Containers (Section D) ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-10);
+  padding-right: var(--space-10);
+}
+
+@media (max-width: 1023px) {
+  .container {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+@media (max-width: 639px) {
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* ── Section Spacing (Section D) ── */
+.section {
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-20);
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-10);
+}
+
+@media (max-width: 639px) {
+  .section-header {
+    margin-bottom: var(--space-6);
+  }
+}
+
+/* ── Home Page: Hero (Section E1) ── */
+.hero-section {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-16);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.hero-content {
+  grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.hero-panel {
+  grid-column: span 7;
+  position: relative;
+  background-color: var(--color-well);
+  border-radius: var(--radius-lg);
+  min-height: 540px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1023px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .hero-content {
+    grid-column: span 1;
+  }
+
+  .hero-panel {
+    grid-column: span 1;
+    min-height: 380px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-panel {
+    min-height: 320px;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Hero Hotspots (Section E1) ── */
+.hotspot {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.hotspot-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-pine);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.hotspot-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-paper);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--color-pine);
+  white-space: nowrap;
+}
+
+.hotspot-price {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.hotspot:hover .hotspot-dot {
+  transform: scale(1.1);
+}
+
+.hotspot:active {
+  transform: scale(0.96);
+}
+
+/* Hotspot placements per slot */
+.hotspot[data-slot="1"] { top: 22%; left: 18%; }
+.hotspot[data-slot="2"] { top: 38%; right: 24%; }
+.hotspot[data-slot="3"] { bottom: 28%; left: 28%; }
+.hotspot[data-slot="4"] { bottom: 20%; right: 20%; }
+
+@media (max-width: 639px) {
+  .hotspot[data-slot="4"] {
+    display: none;
+  }
+}
+
+/* ── Home Page: Shop by Category (Section E1) ── */
+.category-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 96px;
+  padding: 0 var(--space-4);
+  border-bottom: 1px solid var(--line-subtle);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.category-list > .category-row:first-child {
+  border-top: 1px solid var(--line-subtle);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .category-row:hover {
+    background-color: var(--color-paper);
+  }
+}
+
+@media (max-width: 639px) {
+  .category-row {
+    height: 72px;
+  }
+}
+
+.category-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.category-arrow {
+  color: var(--color-pine);
+  font-size: 1.25rem;
+}
+
+/* ── Home Page: Featured Products Grid (Section E1) ── */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 1023px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 639px) {
+  .featured-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    gap: var(--space-4);
+    padding-bottom: var(--space-4);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .featured-grid > .product-card {
+    flex: 0 0 62vw;
+    scroll-snap-align: start;
+  }
+}
+
+/* ── Home Page: Spotlight Panel (Section E1) ── */
+.spotlight-panel {
+  background-color: var(--color-pine);
+  color: var(--on-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-12);
+  margin-top: var(--space-16);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+@media (max-width: 1023px) {
+  .spotlight-panel {
+    grid-template-columns: 1fr;
+    padding: var(--space-6);
+    gap: var(--space-6);
+  }
+}
+
+.spotlight-image-well {
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-well);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotlight-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.spotlight-summary {
+  color: var(--on-dark-muted);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.spotlight-price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--on-dark);
+}
+
+/* ── Shop Page: Catalogue (Section E2) ── */
+.shop-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-8);
+  padding-top: var(--space-8);
+}
+
+.shop-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.shop-search {
+  flex: 1;
+  max-width: 360px;
+  position: relative;
+}
+
+@media (max-width: 639px) {
+  .shop-search {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.shop-sort {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.shop-chips {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  -webkit-overflow-scrolling: touch;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: var(--space-6);
+  row-gap: var(--space-12);
+}
+
+@media (max-width: 1023px) {
+  .shop-grid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: var(--space-8);
+  }
+}
+
+@media (max-width: 639px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-4);
+    row-gap: var(--space-8);
+  }
+}
+
+/* ── Pagination (Section E2 & F) ── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-16);
+  margin-bottom: var(--space-12);
+}
+
+.pagination-item {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-pine);
+  text-decoration: none;
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.pagination-item:hover {
+  background-color: var(--color-well);
+}
+
+.pagination-item.active {
+  background-color: var(--color-pine);
+  color: var(--color-paper);
+}
+
+/* ── Page Not Found (Section E10) ── */
+.page-not-found {
+  min-height: 100vh;
+}
+
+.not-found-state {
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-20);
+}
+
+.not-found-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
