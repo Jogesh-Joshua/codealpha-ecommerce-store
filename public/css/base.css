@@ -164,6 +164,15 @@ p a:hover, .prose a:hover {
   outline-offset: 3px;
 }
 
+main:focus:not(:focus-visible) {
+  outline: none;
+}
+
+main:focus-visible {
+  outline: 2px solid var(--color-pine);
+  outline-offset: -2px;
+}
+
 .on-dark :focus-visible,
 .site-footer :focus-visible,
 .announcement-bar :focus-visible {
@@ -210,6 +219,22 @@ p a:hover, .prose a:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .skeleton {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .button:active,
+  .icon-button:active,
+  .chip:active,
+  .product-card:active,
+  .product-card:hover .card-image,
+  .hotspot:hover .hotspot-dot,
+  .hotspot:active,
+  .stepper-btn:active {
+    transform: none !important;
   }
 }
 

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a Deskline account to save your cart and view order history.">
+  <meta name="theme-color" content="#EDEFEA">
+  <title>Create account — Deskline</title>
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="preload" href="/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+  <!-- Accessibility: Skip Link (Section E0) -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Announcement Bar (Section E0) -->
+  <div class="announcement-bar" role="region" aria-label="Store announcement">
+    Demo store. Orders are saved, nothing ships, and no payment is taken.
+  </div>
+
+  <!-- Header (Section E0) -->
+  <header class="site-header">
+    <div class="container header-container">
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="brand-logo" aria-label="Deskline home">Deskline</a>
+        <a href="/shop" class="nav-link">Shop</a>
+        <div class="categories-dropdown">
+          <button type="button" class="nav-link categories-trigger" id="categories-trigger" aria-expanded="false" aria-controls="categories-panel">
+            <span>Categories</span>
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="categories-panel" id="categories-panel" hidden>
+            <a href="/shop" class="categories-panel__item">All products</a>
+            <a href="/shop?category=desk-mats" class="categories-panel__item">Desk mats</a>
+            <a href="/shop?category=charging-cables" class="categories-panel__item">Charging &amp; cables</a>
+            <a href="/shop?category=stands-risers" class="categories-panel__item">Stands &amp; risers</a>
+            <a href="/shop?category=lighting" class="categories-panel__item">Lighting</a>
+            <a href="/shop?category=organizers" class="categories-panel__item">Organizers</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/shop#search" class="icon-button" aria-label="Search products">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+        <a href="/login" class="nav-link">Sign in</a>
+        <a href="/cart" class="cart-link" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Cart</span>
+          <span class="cart-badge" data-count="0"></span>
+        </a>
+        <div id="cart-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Dialog (Section E0) -->
+  <dialog id="mobile-drawer" class="mobile-drawer" aria-label="Navigation menu">
+    <div class="mobile-drawer__header">
+      <a href="/" class="brand-logo" aria-label="Deskline home">Deskline</a>
+      <button type="button" class="mobile-drawer__close" id="drawer-close" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <form action="/shop" method="GET" class="mobile-drawer__search" role="search">
+      <label for="drawer-search-input-reg" class="visually-hidden">Search products</label>
+      <input type="search" id="drawer-search-input-reg" name="search" placeholder="Search products…" class="field-input">
+    </form>
+    <nav class="mobile-drawer__nav" aria-label="Mobile navigation">
+      <a href="/shop" class="mobile-drawer__link">All products</a>
+      <a href="/shop?category=desk-mats" class="mobile-drawer__link">Desk mats</a>
+      <a href="/shop?category=charging-cables" class="mobile-drawer__link">Charging &amp; cables</a>
+      <a href="/shop?category=stands-risers" class="mobile-drawer__link">Stands &amp; risers</a>
+      <a href="/shop?category=lighting" class="mobile-drawer__link">Lighting</a>
+      <a href="/shop?category=organizers" class="mobile-drawer__link">Organizers</a>
+    </nav>
+    <div class="mobile-drawer__divider" role="separator"></div>
+    <div class="mobile-drawer__account" id="drawer-account-block">
+      <a href="/login" class="button button-primary button-full">Sign in</a>
+      <a href="/register" class="button button-secondary button-full">Create account</a>
+    </div>
+  </dialog>
+
+  <!-- Main Content -->
+  <main class="main-content" id="main" tabindex="-1">
+    <div class="container auth-section">
+      <div class="auth-split-grid">
+        <!-- Media Panel (Desktop only) -->
+        <div class="auth-media-panel">
+          <img src="/images/hero-flatlay.svg" alt="" width="600" height="750" loading="eager" decoding="async">
+        </div>
+
+        <!-- Form Panel -->
+        <div class="auth-form-panel">
+          <div>
+            <h1 class="heading-1">Create your account</h1>
+            <p class="body-text text-secondary">Save your cart across visits and see your order history.</p>
+          </div>
+
+          <form id="register-form" novalidate>
+            <div id="register-alert-container"></div>
+
+            <div class="field-group">
+              <label for="reg-name" class="field-label">Full name</label>
+              <input type="text" id="reg-name" name="name" class="field-input" autocomplete="name" required>
+              <div id="name-error" class="field-error-slot" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="reg-email" class="field-label">Email</label>
+              <input type="email" id="reg-email" name="email" class="field-input" autocomplete="email" autocapitalize="none" spellcheck="false" required>
+              <div id="email-error" class="field-error-slot" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="reg-password" class="field-label">Password</label>
+              <div class="password-wrap">
+                <input type="password" id="reg-password" name="password" class="field-input" autocomplete="new-password" required minlength="8" maxlength="72">
+                <button type="button" class="password-toggle" id="reg-password-toggle" aria-pressed="false" aria-label="Show password">Show</button>
+              </div>
+              <p class="field-hint">At least 8 characters.</p>
+              <div id="password-error" class="field-error-slot" aria-live="polite"></div>
+            </div>
+
+            <div class="field-group">
+              <label for="reg-confirm-password" class="field-label">Confirm password</label>
+              <div class="password-wrap">
+                <input type="password" id="reg-confirm-password" name="confirmPassword" class="field-input" autocomplete="new-password" required>
+                <button type="button" class="password-toggle" id="reg-confirm-password-toggle" aria-pressed="false" aria-label="Show confirm password">Show</button>
+              </div>
+              <div id="confirm-password-error" class="field-error-slot" aria-live="polite"></div>
+            </div>
+
+            <button type="submit" id="reg-submit-btn" class="button button-primary button-lg button-full">Create account</button>
+          </form>
+
+          <p class="small text-secondary text-center">
+            Already have an account? <a href="/login" class="button-text">Sign in</a>
+          </p>
+
+          <p class="caption text-secondary text-center">
+            Demo store. Use fictional details.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Region -->
+  <div id="toast-region" class="toast-region" aria-label="Notifications"></div>
+
+  <!-- Footer (Section E0) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <span class="brand-logo on-dark">Deskline</span>
+          <p class="footer-link">Accessories for the desk you work at.</p>
+          <p class="caption on-dark-muted">This is a demo store built for the CodeAlpha Full Stack internship. Products are fictional.</p>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">Shop</h3>
+          <a href="/shop" class="footer-link">All products</a>
+          <a href="/shop?category=desk-mats" class="footer-link">Desk mats</a>
+          <a href="/shop?category=charging-cables" class="footer-link">Charging &amp; cables</a>
+          <a href="/shop?category=stands-risers" class="footer-link">Stands &amp; risers</a>
+          <a href="/shop?category=lighting" class="footer-link">Lighting</a>
+          <a href="/shop?category=organizers" class="footer-link">Organizers</a>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">Account</h3>
+          <a href="/login" class="footer-link">Sign in</a>
+          <a href="/register" class="footer-link">Create account</a>
+          <a href="/orders" class="footer-link">Your orders</a>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">About</h3>
+          <p class="caption on-dark-muted">CodeAlpha Internship Task 1 — Full-stack e-commerce project with PostgreSQL, Express, and modern standards-compliant web technologies.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Deskline. Demo store, no real orders.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/header.js"></script>
+  <script type="module" src="/js/register.js"></script>
+</body>
+</html>
+

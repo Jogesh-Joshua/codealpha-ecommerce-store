@@ -12,11 +12,18 @@
 
 import express from 'express';
 import helmet from 'helmet';
+import cookieParser from 'cookie-parser';
 import { requestIdMiddleware } from './middleware/requestId.js';
 import { loggingMiddleware } from './middleware/logging.js';
 import { originGuardMiddleware } from './middleware/originGuard.js';
+import { sessionLoaderMiddleware } from './middleware/session.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';
 import { createHealthRouter } from './routes/health.js';
+import { createCategoriesRouter } from './routes/categories.js';
+import { createProductsRouter } from './routes/products.js';
+import { createAuthRouter } from './routes/auth.js';
+import { createCartRouter } from './routes/cart.js';
+import { createOrdersRouter } from './routes/orders.js';
 import { createStaticAssetsMiddleware } from './middleware/staticAssets.js';
 
 /**
@@ -57,11 +64,26 @@ export function createApp({ config, logSink, pool, configureRoutes, publicDir } 
   // 5. Origin & CSRF guard before body parsing
   app.use('/api', originGuardMiddleware({ config }));
 
-  // 6. JSON body parsing with strict 20 kB limit
+  // 6. Cookie parser on /api (§6.1)
+  app.use('/api', cookieParser());
+
+  // 7. JSON body parsing with strict 20 kB limit
   app.use('/api', express.json({ limit: config.bodyLimitBytes || 20480 }));
 
-  // 7. Core routes
+  // 8. Session loader middleware (§6.1)
+  if (pool) {
+    app.use('/api', sessionLoaderMiddleware({ config, pool }));
+  }
+
+  // 9. Core routes
   app.use('/api', createHealthRouter({ pool }));
+  app.use('/api', createCategoriesRouter({ pool }));
+  app.use('/api', createProductsRouter({ pool }));
+  if (pool) {
+    app.use('/api', createAuthRouter({ config, pool, logSink }));
+    app.use('/api', createCartRouter({ config, pool, logSink }));
+    app.use('/api', createOrdersRouter({ config, pool, logSink }));
+  }
 
   // Optional custom/extra route configuration before static & 404 handlers
   if (typeof configureRoutes === 'function') {

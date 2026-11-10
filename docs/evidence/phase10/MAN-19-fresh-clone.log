@@ -1,0 +1,259 @@
+================================================================
+MAN-19: FRESH-CLONE VERIFICATION AUDIT LOG
+Project: CodeAlpha_EcommerceStore
+Execution Date: 2026-11-10
+Remote: https://github.com/Jogesh-Joshua/codealpha-ecommerce-store.git
+Controlling Spec: CodeAlpha_Backend_Contract_Addendum.md §8.7, §10
+================================================================
+
+Creating isolated clone in temporary directory: C:\Users\joey0\AppData\Local\Temp\deskline-fresh-clone-1794303817981
+
+--- STEP 1: GIT CLONE FROM REMOTE ---
+git clone successful.
+Cloned head commit: d56070c fix(vercel)
+
+--- STEP 2: VERIFY TRACKED REPOSITORY FILES ---
+Total tracked files in clone: 66
+Essential tracked files check: PASS (All essential files tracked)
+
+--- STEP 3: LOCKFILE-BASED INSTALLATION (npm ci) ---
+added 109 packages, and audited 110 packages in 2s
+
+38 packages are looking for funding
+  run `npm fund` for details
+
+4 high severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm ci result: SUCCESS
+
+--- STEP 4: STATIC AUDIT IN FRESH CLONE (tests/static) ---
+▶ STAT-08: no express.static in src/
+  ✔ express.static does not appear in any file in src/ (6.9566ms)
+✔ STAT-08: no express.static in src/ (8.0295ms)
+▶ STAT-13: Database access rules
+  ✔ no setTypeParser or parseInt8 in src/, scripts/, or tests/helpers/ (9.3031ms)
+  ✔ @vercel/functions is imported only in src/db/pool.js (4.2412ms)
+  ✔ new Pool( appears only in src/db/pool.js, scripts/, and tests/helpers/ (3.3025ms)
+✔ STAT-13: Database access rules (18.2297ms)
+▶ STAT-07: .env.example and .env.test.example
+  ✔ .env.example exists (1.1108ms)
+  ✔ .env.test.example exists (0.3858ms)
+  ✔ .env.example contains no TEST_* variable (0.1647ms)
+  ✔ .env.example contains no VERCEL variable (system-set) (0.1824ms)
+  ✔ .env.example lists all app config variables except VERCEL and test-only vars (0.1445ms)
+  ✔ .env.test.example contains NODE_ENV=test (0.1479ms)
+  ✔ .env.test.example contains no DATABASE_URL (only TEST_DATABASE_URL) (0.122ms)
+  ✔ .env.test.example contains no DATABASE_URL_UNPOOLED (0.1537ms)
+  ✔ .env.test.example contains TEST_DATABASE_URL (0.1682ms)
+  ✔ .env.test.example contains TEST_DB_DISPOSABLE with an empty value (0.2677ms)
+  ✔ .env.example values are placeholders (no real credential patterns) (0.2655ms)
+✔ STAT-07: .env.example and .env.test.example (4.6956ms)
+▶ STAT-05: package.json structure
+  ✔ has type === "module" (0.9364ms)
+  ✔ has engines.node === "22.x" (0.108ms)
+  ✔ has no devDependencies key (0.162ms)
+  ✔ has exactly the seven approved production dependencies (0.6285ms)
+  ✔ contains no font package in dependencies (0.168ms)
+  ✔ has the dev script matching section 7.2 exactly (0.107ms)
+  ✔ has the db:migrate script matching section 7.2 exactly (0.1045ms)
+  ✔ has the db:seed script matching section 7.2 exactly (0.129ms)
+  ✔ has the db:setup script matching section 7.2 exactly (0.1285ms)
+  ✔ has the test:db:reset script matching section 7.2 exactly (0.1483ms)
+  ✔ has the test:unit script matching section 7.2 exactly (0.1441ms)
+  ✔ has the test script matching section 7.2 exactly (0.0837ms)
+  ✔ has the audit script matching section 7.2 exactly (0.0769ms)
+  ✔ no script contains an inline environment assignment (VAR=value node ...) (0.8114ms)
+  ✔ no script uses POSIX-only commands (cp, rm, export) (0.2016ms)
+  ✔ no script uses cross-env (0.1389ms)
+  ✔ no script uses single-quoted strings (0.1156ms)
+✔ STAT-05: package.json structure (5.8133ms)
+ℹ tests 32
+ℹ suites 4
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 115.4485
+
+--- STEP 5: UNIT TESTS EXECUTION (npm run test:unit) ---
+Copied .env.test.example -> .env.test (clean placeholder template, zero credentials)
+> codealpha-ecommerce-store@0.1.0 test:unit
+> node --env-file=.env.test --test --test-reporter=spec "tests/unit/**/*.test.js"
+
+▶ UT-11: loadConfig — basic success cases
+  ✔ returns frozen config for a minimal valid development env (0.9897ms)
+  ✔ returns frozen config for a minimal valid test env (0.1766ms)
+  ✔ returns frozen config for a minimal valid production env (0.1515ms)
+  ✔ exposes application constants (not env vars) (0.1743ms)
+✔ UT-11: loadConfig — basic success cases (2.4999ms)
+▶ UT-11: loadConfig — NODE_ENV validation
+  ✔ fails when NODE_ENV is missing (0.2921ms)
+  ✔ fails when NODE_ENV is an unrecognised value (0.1171ms)
+  ✔ lists all failures in one error (does not stop at first) (0.2261ms)
+✔ UT-11: loadConfig — NODE_ENV validation (0.8622ms)
+▶ UT-11: loadConfig — DATABASE_URL validation
+  ✔ fails when DATABASE_URL is missing (0.2326ms)
+  ✔ fails when DATABASE_URL has wrong scheme (0.1609ms)
+  ✔ fails in production when DATABASE_URL has no -pooler in host (0.1699ms)
+  ✔ fails in production when DATABASE_URL lacks sslmode=require (0.114ms)
+  ✔ accepts a direct (non-pooler) URL in test mode (0.1029ms)
+✔ UT-11: loadConfig — DATABASE_URL validation (1.0498ms)
+▶ UT-11: loadConfig — STORE_CURRENCY
+  ✔ fails when STORE_CURRENCY is missing (0.1276ms)
+  ✔ fails when STORE_CURRENCY is USD (0.082ms)
+  ✔ fails when STORE_CURRENCY is EUR (0.0726ms)
+  ✔ accepts STORE_CURRENCY=INR (0.0842ms)
+✔ UT-11: loadConfig — STORE_CURRENCY (0.4875ms)
+▶ UT-11: loadConfig — SHIPPING_FLAT_MINOR
+  ✔ fails when SHIPPING_FLAT_MINOR is missing (0.1149ms)
+  ✔ fails when SHIPPING_FLAT_MINOR is 9950 (not a multiple of 100) (0.0939ms)
+  ✔ fails when SHIPPING_FLAT_MINOR is negative (0.0792ms)
+  ✔ fails when SHIPPING_FLAT_MINOR is a float (0.0708ms)
+  ✔ accepts SHIPPING_FLAT_MINOR=0 (free shipping) (0.0744ms)
+  ✔ accepts SHIPPING_FLAT_MINOR=9900 (0.0787ms)
+✔ UT-11: loadConfig — SHIPPING_FLAT_MINOR (0.681ms)
+▶ UT-11: loadConfig — SESSION_COOKIE_NAME
+  ✔ uses default deskline_session when unset in development (0.1216ms)
+  ✔ uses default deskline_session when unset in test mode (0.0984ms)
+  ✔ fails when SESSION_COOKIE_NAME does not match pattern (0.0966ms)
+  ✔ fails in production when SESSION_COOKIE_NAME does not start with __Host- (0.1026ms)
+  ✔ accepts __Host- cookie name in production (0.0869ms)
+  ✔ accepts default cookie name in test mode (no __Host- required) (0.0745ms)
+✔ UT-11: loadConfig — SESSION_COOKIE_NAME (0.7446ms)
+▶ UT-11: loadConfig — pool settings
+  ✔ fails when DB_POOL_MAX is 1 (below minimum of 2) (0.1644ms)
+  ✔ passes when DB_POOL_MAX is 2 (0.0699ms)
+  ✔ fails when DB_POOL_MAX is 11 (above maximum of 10) (0.0725ms)
+  ✔ defaults DB_POOL_MAX to 5 (0.0875ms)
+  ✔ fails when DB_POOL_IDLE_TIMEOUT_MS is 999 (below 1000) (0.0819ms)
+  ✔ fails when DB_POOL_CONNECTION_TIMEOUT_MS is 30001 (above 30000) (0.0852ms)
+  ✔ fails when DB_STATEMENT_TIMEOUT_MS is 60001 (above 60000) (0.0838ms)
+  ✔ populates the db group with parsed integers (0.1049ms)
+✔ UT-11: loadConfig — pool settings (1.0131ms)
+▶ UT-11: loadConfig — VERCEL / runtime.onVercel
+  ✔ sets runtime.onVercel=true when VERCEL is set to any value (0.1096ms)
+  ✔ sets runtime.onVercel=false when VERCEL is absent (0.0919ms)
+✔ UT-11: loadConfig — VERCEL / runtime.onVercel (0.2732ms)
+▶ UT-11: loadConfig — error messages never contain values
+  ✔ error message does not include the bad value string (0.1108ms)
+  ✔ error message does not include the DATABASE_URL value (0.0903ms)
+✔ UT-11: loadConfig — error messages never contain values (0.2778ms)
+▶ UT-11: loadConfig — ORDER_NUMBER_PREFIX
+  ✔ defaults to DL (0.2907ms)
+  ✔ accepts 2-letter prefix (0.11ms)
+  ✔ accepts 4-letter prefix (0.0735ms)
+  ✔ fails for 1-letter prefix (0.0873ms)
+  ✔ fails for 5-letter prefix (0.0831ms)
+  ✔ fails for lowercase letters (0.0723ms)
+✔ UT-11: loadConfig — ORDER_NUMBER_PREFIX (0.9382ms)
+▶ UT-11: loadConfig — SESSION_TTL_DAYS and BCRYPT_COST
+  ✔ defaults SESSION_TTL_DAYS to 7 (0.1463ms)
+  ✔ fails when SESSION_TTL_DAYS is 0 (0.0976ms)
+  ✔ fails when SESSION_TTL_DAYS is 31 (0.0861ms)
+  ✔ defaults BCRYPT_COST to 12 (0.0817ms)
+  ✔ fails when BCRYPT_COST is 9 (0.1174ms)
+  ✔ fails when BCRYPT_COST is 15 (0.0903ms)
+✔ UT-11: loadConfig — SESSION_TTL_DAYS and BCRYPT_COST (0.8368ms)
+▶ UT-11: loadConfig — LOG_LEVEL
+  ✔ defaults to info (0.1245ms)
+  ✔ fails for an unrecognised level (0.1037ms)
+  ✔ accepts each valid level (0.1275ms)
+✔ UT-11: loadConfig — LOG_LEVEL (0.4649ms)
+▶ UT-11: loadConfig — config is deeply frozen
+  ✔ top-level object is frozen (0.4891ms)
+  ✔ nested db object is frozen (0.1481ms)
+  ✔ nested runtime object is frozen (0.0986ms)
+✔ UT-11: loadConfig — config is deeply frozen (0.866ms)
+▶ UT-13: toSafeMinor and toSafeCount
+  ▶ toSafeMinor
+    ✔ accepts valid value: 0 (number) (0.8671ms)
+    ✔ accepts valid value: "0" (string) (0.137ms)
+    ✔ accepts valid value: 549700 (number) (0.0923ms)
+    ✔ accepts valid value: "549700" (string) (0.1086ms)
+    ✔ accepts valid value: 9007199254740991 (number) (0.1169ms)
+    ✔ accepts valid value: "9007199254740991" (string) (0.1238ms)
+    ✔ rejects invalid value: -1 (number) (0.7016ms)
+    ✔ rejects invalid value: "-1" (string) (0.1289ms)
+    ✔ rejects invalid value: 1.5 (number) (0.1042ms)
+    ✔ rejects invalid value: "1.5" (string) (0.1415ms)
+    ✔ rejects invalid value: "1e3" (string) (0.1507ms)
+    ✔ rejects invalid value: " 12" (string) (0.0695ms)
+    ✔ rejects invalid value: "012" (string) (0.0575ms)
+    ✔ rejects invalid value: "" (string) (0.0704ms)
+    ✔ rejects invalid value: null (object) (0.0604ms)
+    ✔ rejects invalid value: undefined (undefined) (0.0635ms)
+    ✔ rejects invalid value: null (number) (0.0789ms)
+    ✔ rejects invalid value: null (number) (0.0558ms)
+    ✔ rejects invalid value: "Infinity" (string) (0.051ms)
+    ✔ rejects invalid value: 9007199254740992 (number) (0.0834ms)
+    ✔ rejects invalid value: "9007199254740992" (string) (0.0573ms)
+    ✔ rejects invalid value: true (boolean) (0.0594ms)
+    ✔ rejects invalid value: false (boolean) (0.0553ms)
+    ✔ rejects invalid value: {} (object) (0.0767ms)
+    ✔ rejects invalid value: [] (object) (0.0674ms)
+    ✔ rejects invalid value: {"value":100} (object) (0.0657ms)
+    ✔ rejects invalid value: [100] (object) (0.0535ms)
+  ✔ toSafeMinor (5.9275ms)
+  ▶ toSafeCount
+    ✔ accepts valid value: 0 (number) (0.2856ms)
+    ✔ accepts valid value: "0" (string) (0.0493ms)
+    ✔ accepts valid value: 549700 (number) (0.0428ms)
+    ✔ accepts valid value: "549700" (string) (0.0712ms)
+    ✔ accepts valid value: 9007199254740991 (number) (0.0664ms)
+    ✔ accepts valid value: "9007199254740991" (string) (0.0749ms)
+    ✔ rejects invalid value: -1 (number) (0.2632ms)
+    ✔ rejects invalid value: "-1" (string) (0.0868ms)
+    ✔ rejects invalid value: 1.5 (number) (0.0999ms)
+    ✔ rejects invalid value: "1.5" (string) (0.0797ms)
+    ✔ rejects invalid value: "1e3" (string) (0.084ms)
+    ✔ rejects invalid value: " 12" (string) (0.0907ms)
+    ✔ rejects invalid value: "012" (string) (0.1715ms)
+    ✔ rejects invalid value: "" (string) (0.0679ms)
+    ✔ rejects invalid value: null (object) (0.0626ms)
+    ✔ rejects invalid value: undefined (undefined) (0.0745ms)
+    ✔ rejects invalid value: null (number) (0.0613ms)
+    ✔ rejects invalid value: null (number) (0.0565ms)
+    ✔ rejects invalid value: "Infinity" (string) (0.0807ms)
+    ✔ rejects invalid value: 9007199254740992 (number) (0.0656ms)
+    ✔ rejects invalid value: "9007199254740992" (string) (0.0765ms)
+    ✔ rejects invalid value: true (boolean) (0.079ms)
+    ✔ rejects invalid value: false (boolean) (0.0822ms)
+    ✔ rejects invalid value: {} (object) (0.0519ms)
+    ✔ rejects invalid value: [] (object) (0.0526ms)
+    ✔ rejects invalid value: {"value":100} (object) (0.0517ms)
+    ✔ rejects invalid value: [100] (object) (0.0545ms)
+  ✔ toSafeCount (3.1969ms)
+✔ UT-13: toSafeMinor and toSafeCount (9.6106ms)
+▶ UT-14: createPool
+  ✔ calls attachDatabasePool exactly once when onVercel is true and logs db_pool_attached (1.2752ms)
+  ✔ does NOT call attachDatabasePool when onVercel is false (0.2028ms)
+  ✔ passes configured pool options (max, idleTimeoutMillis, connectionTimeoutMillis, statement_timeout) (0.1787ms)
+  ✔ handles error event on the pool without throwing and logs code only (0.3105ms)
+✔ UT-14: createPool (2.9202ms)
+ℹ tests 116
+ℹ suites 17
+ℹ pass 116
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 143.5269
+
+================================================================
+MAN-19 VERIFICATION RESULT: PASS
+Summary: Fresh clone builds cleanly from lockfile (npm ci).
+Static checks (32 tests across 4 suites) and unit tests (116 tests
+across 17 suites) pass completely without copying secrets or database access.
+Note: Additional tests and frontend views implemented in Phases 3-9
+exist in the primary workspace and await authorization to push.
+================================================================
+
+Temporary directory C:\Users\joey0\AppData\Local\Temp\deskline-fresh-clone-1794303817981 cleaned up successfully.

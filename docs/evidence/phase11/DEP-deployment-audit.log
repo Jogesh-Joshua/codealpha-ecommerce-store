@@ -1,0 +1,87 @@
+================================================================
+PHASE 11: PRODUCTION DEPLOYMENT & VERIFICATION AUDIT LOG
+Target URL: https://codealpha-ecommerce-store-sable.vercel.app
+Date: 2026-11-10
+Verified Commit on Vercel: d56070c (HEAD of origin/main)
+Local Working Directory Commit: Uncommitted local changes (Phases 3-10)
+Controlling Spec: CodeAlpha_Backend_Contract_Addendum.md §9.5, §10
+================================================================
+
+--- 1. STATIC ASSET & CACHE HEADERS (DEP-02) ---
+GET / -> Status: 200
+  cache-control: public, max-age=0
+GET /css/tokens.css -> Status: 200
+  cache-control: public, max-age=86400, stale-while-revalidate=604800
+GET /images/hero-flatlay.svg -> Status: 200
+  cache-control: public, max-age=86400, stale-while-revalidate=604800
+Result: PASS (Compliant with Addendum §9.1 cache rules)
+
+--- 2. DATABASE HEALTH & POOL CONNECTIVITY (DEP-05 & DEP-17) ---
+GET /api/health -> Status: 200 {"status":"ok"}
+GET /api/health?deep=1 -> Status: 200 {"status":"ok","database":"up"}
+Result: PASS (Database connection pool operational on Vercel)
+
+--- 3. 404 ROUTING BOUNDARIES (DEP-06) ---
+GET /no-such-page -> Status: 404 text/html
+  Body: Custom Deskline 404 HTML template
+GET /api/no-such -> Status: 404 application/json
+  Body: {"error":{"code":"ROUTE_NOT_FOUND","message":"The requested API route was not found.","requestId":"bd76a34b-3247-4137-af8a-18e83afa5079"}}
+Result: PASS (Clear boundary between storefront HTML and API JSON 404s)
+
+--- 4. SECURITY HEADERS (DEP-07 & DEP-15) ---
+HTTP Response Headers:
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer (API/HTML) / strict-origin-when-cross-origin (Assets)
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; ...
+  X-Powered-By: NONE (header disabled via app.disable('x-powered-by'))
+Result: PASS (Zero CSP violations in browser, strict security headers enforced)
+
+--- 5. ASSET SECRET SCAN (DEP-10) ---
+Scanned downloaded assets from live URL:
+  /, /shop, /css/tokens.css, /css/base.css, /css/components.css, /css/pages.css, /images/hero-flatlay.svg
+Pattern Check: postgresql://, neon.tech, password, secret, token
+Result: PASS (Zero credentials, hostnames, or passwords found in client bundles)
+
+--- 6. RAPID REQUEST LATENCY & POOL RESILIENCE (DEP-14) ---
+30 Rapid requests to https://codealpha-ecommerce-store-sable.vercel.app/api/health
+Successful requests: 30/30 (100% 200 OK)
+Latency Metrics:
+  Min: 249.9 ms
+  p50: 310.0 ms
+  p95: 416.3 ms
+  Max: 426.4 ms
+Connection drops / 5xx errors: 0
+Result: PASS
+
+--- 7. LIGHTHOUSE MOBILE AUDIT (DEP-16 & MAN-18) ---
+Audit Engine: Lighthouse 13.6.0 via Chrome headless (Device: Mobile, Form Factor: Mobile)
+Target 1: Homepage (https://codealpha-ecommerce-store-sable.vercel.app/)
+  Performance:    100 / 100
+  Accessibility:  100 / 100
+  Best Practices: 100 / 100
+  SEO:            100 / 100
+  Report: docs/evidence/phase11/lighthouse-home.json
+Target 2: Shop Catalogue (https://codealpha-ecommerce-store-sable.vercel.app/shop)
+  Performance:    100 / 100
+  Accessibility:   94 / 100
+  Best Practices: 100 / 100
+  SEO:            100 / 100
+  Report: docs/evidence/phase11/lighthouse-shop.json
+Result: PASS
+
+--- 8. GATES BLOCKED BY STALE DEPLOYMENT COMMIT (d56070c) ---
+The following gates cannot execute on the live deployment until the Phase 3-10 implementation is committed and pushed to origin/main:
+- DEP-03 (Clean URLs for /cart, /product, /checkout, /order, /orders, /login, /register): Returns 404 because views were created in Phase 8 and are uncommitted.
+- DEP-04 (/api/products?limit=3): Returns 404 ROUTE_NOT_FOUND because route was added in Phase 3.
+- DEP-08 (__Host- session cookie): Blocked; auth routes uncommitted.
+- DEP-09 (Production order placement): Blocked; order routes uncommitted.
+- DEP-18 (Idempotency on pooled Neon endpoint): Blocked; order service uncommitted.
+- DEP-19 (Login rate limiter): Blocked; auth routes uncommitted.
+
+--- 9. PRODUCTION DATABASE STATE ---
+Target Host: ep-bold-dust-b5wloz0n.c-7.us-east-2.aws.neon.tech/neondb
+Connection status: SUCCESS (verified read-only)
+Tables present: 0 (Public schema empty)
+Status: Ready for migration 001_init.sql and seed catalog.js once deployment authorization is granted.
+================================================================
+

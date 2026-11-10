@@ -89,6 +89,57 @@ describe('Storefront and Static Asset Serving', () => {
     });
   });
 
+  describe('Phase 8 Clean URLs Routing', () => {
+    it('GET /product returns 200 HTML with Product Details', async () => {
+      const res = await testEnv.request('/product');
+      assert.equal(res.status, 200);
+      const html = await res.text();
+      assert.ok(html.includes('Product Details — Deskline'));
+    });
+
+    it('GET /cart returns 200 HTML with Cart', async () => {
+      const res = await testEnv.request('/cart');
+      assert.equal(res.status, 200);
+      const html = await res.text();
+      assert.ok(html.includes('Cart — Deskline'));
+    });
+
+    it('GET /checkout returns 200 HTML with Checkout', async () => {
+      const res = await testEnv.request('/checkout');
+      assert.equal(res.status, 200);
+      const html = await res.text();
+      assert.ok(html.includes('Checkout — Deskline'));
+    });
+
+    it('GET /order returns 200 HTML with Order Details', async () => {
+      const res = await testEnv.request('/order');
+      assert.equal(res.status, 200);
+      const html = await res.text();
+      assert.ok(html.includes('Order Details — Deskline'));
+    });
+
+    it('GET /orders returns 200 HTML with Your orders', async () => {
+      const res = await testEnv.request('/orders');
+      assert.equal(res.status, 200);
+      const html = await res.text();
+      assert.ok(html.includes('Your orders — Deskline'));
+    });
+
+    it('GET /login returns 200 HTML with Sign in', async () => {
+      const res = await testEnv.request('/login');
+      assert.equal(res.status, 200);
+      const html = await res.text();
+      assert.ok(html.includes('Sign in — Deskline'));
+    });
+
+    it('GET /register returns 200 HTML with Create account', async () => {
+      const res = await testEnv.request('/register');
+      assert.equal(res.status, 200);
+      const html = await res.text();
+      assert.ok(html.includes('Create account — Deskline'));
+    });
+  });
+
   describe('CSS Asset Serving (GET /css/*.css)', () => {
     it('serves /css/tokens.css with Content-Type: text/css and Cache-Control', async () => {
       const res = await testEnv.request('/css/tokens.css');
@@ -119,6 +170,7 @@ describe('Storefront and Static Asset Serving', () => {
       assert.ok(css.includes('display-xl'));
       assert.ok(css.includes('heading-1'));
       assert.ok(css.includes('skip-link'));
+      assert.ok(css.includes('main:focus-visible'));
     });
 
     it('serves /css/components.css with Content-Type: text/css', async () => {

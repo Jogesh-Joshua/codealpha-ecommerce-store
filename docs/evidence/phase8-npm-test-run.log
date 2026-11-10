@@ -1,0 +1,864 @@
+Command exited with code 0.
+
+Command output:
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠔⠉⠀⣄⠀⠀⠀⠀⢀⣀⠤⠐⠚⠙
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠐⠁⠀⠀⠀⠀⢀⡇⠐⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠊⠁⠀⠈⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⡀⡐⡌⢆
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠃⠀⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠪⢨⢊⠂
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠁⠀⡀⠀⠀⠀⢀⠠⢄⢄⢔⢖⠲⣤⢤⣄⠀⢪⢘⠌⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠁⠠⠠⣄⠀⠐⠃⢈⠀⢢⠡⡣⠫⡅⡯⠛⠚⠹⠕⠀⠀⡘
+⠀⠀⠀⠀⠀⠀⠀⣰⡢⠐⠈⡠⡑⠜⢛⢃⠠⠀⠨⠠⠑⢈⠁⡑⠃⠀⠀⠀⠀⠀⡔⠁
+⠀⠀⠀⠀⠀⠀⠀⠁⠅⢌⠠⠂⠁⠀⠘⢈⠡⠂⠠⠀⠂⠀⠂⠀⠀⠀⠀⠀⠀⣈⣃⠀
+⠀⠀⠀⠀⠀⠀⠀⡠⠘⠁⠀⠀⠀⠀⠀⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢒⠝⢌⠢⡑
+⠀⠀⠀⠀⠀⠄⠂⠀⠀⠀⠀⠀⣀⡼⡕⡪⢋⠕⡡⠣⡩⠪⡑⢍⠫⡫⠫⣖⢯⢦⠵⠜
+⠀⠀⠀⢀⠊⠀⠀⠀⠀⠀⠀⣠⢍⠢⡊⣔⢡⢊⠔⡑⢌⠬⢌⠢⡃⡊⡪⣷⢫⠨⡱⡀
+⠀⠀⠀⢲⠀⠀⠀⠀⠀⢀⠰⡟⡢⢣⠨⡂⡪⢐⢑⢌⠢⡑⡔⠵⠊⠂⠊⢿⠑⠕⣈⡇
+⠀⠀⠀⠘⢤⠀⠀⠀⠀⠈⠀⢳⠨⠢⡑⠌⡢⢑⠰⢐⡵⠚⠁⠀⠀⠀⠀⠈⡄⠀⠈⠀
+⠀⠀⠀⠀⠀⠈⠓⠠⢄⡀⡤⠀⠛⣔⡈⠢⢨⠔⠚⠁⠠⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠁⠀⠀⠈⠁⠉⠁⠀⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⣇⠀⠀
+
+joey0@Joe
+
+ Windows 11 Home Single Language (26H2) x86_64
+ AMD Ryzen 7 7435HS (16) @ 4.55 GHz
+󰚗 LNVNB161216 (SDK0T76485 WIN)
+ 16.46 GiB / 23.69 GiB (69%)
+ 184.06 GiB / 231.55 GiB (79%) - NTFS
+ 200.95 GiB / 244.30 GiB (82%) - NTFS
+
+● ● ● ● ● ● ● ●
+
+
+
+
+
+
+
+
+> codealpha-ecommerce-store@0.1.0 test
+> npm run test:db:reset && node --env-file=.env.test --test --test-concurrency=1 --test-reporter=spec "tests/**/*.test.js"
+
+
+> codealpha-ecommerce-store@0.1.0 test:db:reset
+> node --env-file=.env.test scripts/test-db-reset.js
+
+test-db-reset: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+test-db-reset: dropping public schema and recreating it...
+(node:23128) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+test-db-reset: schema reset done
+migrate: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+migrate: applying 001_init.sql
+migrate: applied 1 migration(s), skipped 0
+seed: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+seed: done. categories=5 products=21 (active=20, out_of_stock=1, low_stock=2)
+test-db-reset: complete
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+(node:22612) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Phase 4: Authentication, Sessions, and Rate Limiting
+  ▶ Registration (API-31, API-32, API-33, API-34, API-35, API-41, SECT-01, SECT-12, SECT-17)
+    ✔ API-31 & SECT-12 & SECT-17: POST /api/auth/register returns 201 {user} without password, sets HttpOnly cookie (2932.3845ms)
+    ✔ SECT-01: In production mode, cookie has Secure flag and __Host- prefix (1510.5705ms)
+    ✔ API-32: database stores valid bcrypt hash differing from password (1728.0795ms)
+    ✔ API-33: registration validation rules return exact field error messages (§4.7) (1191.2875ms)
+    ✔ API-34: registering duplicate email with different casing returns 409 EMAIL_TAKEN (2761.9808ms)
+    ✔ API-35 & SECT-06: unknown fields (role, isAdmin, confirmPassword) return 400 VALIDATION_ERROR (236.5811ms)
+    ✔ API-43: the 11th registration from one IP in one hour returns 429 RATE_LIMITED (19805.354ms)
+  ✔ Registration (API-31, API-32, API-33, API-34, API-35, API-41, SECT-01, SECT-12, SECT-17) (30168.5972ms)
+  ▶ Login & Sessions (API-36, API-37, API-38, API-40, SECT-02, SECT-03, SECT-18)
+    ✔ API-36 & SECT-03: login returns 200 with new session token and invalidates old cookie token (4608.2649ms)
+    ✔ API-37: wrong password and unknown email return identical status, body, and headers (apart from requestId) (3551.2521ms)
+    ✔ API-38: login with missing or non-string fields returns 400 VALIDATION_ERROR (489.5682ms)
+    ✔ API-40 & SECT-02: logout returns 204, deletes session row, clears cookie; replaying returns 401 (3123.531ms)
+    ✔ SECT-18: logging in deletes that user's expired sessions (4832.7646ms)
+  ✔ Login & Sessions (API-36, API-37, API-38, API-40, SECT-02, SECT-03, SECT-18) (16606.4482ms)
+  ▶ Current User Lookup (API-39)
+    ✔ API-39: GET /api/auth/me returns user with valid cookie, 401 without, and 401 with clearing Set-Cookie when expired (2203.7176ms)
+  ✔ Current User Lookup (API-39) (2204.0284ms)
+  ▶ Rate Limiting Policy & Verification (API-42, API-67, API-68, SECT-14, SECT-16)
+    ✔ API-42 & SECT-16: 5 sequential failed logins return 401, 6th returns 429 even with correct password (no bcrypt) (8009.4737ms)
+    ✔ API-42 (unknown email): 5 failed logins return 401, then 6th returns 429 identically (4654.0199ms)
+    ✔ API-67: successful logins are not counted as failures; slot released on success (10898.3346ms)
+    ✔ API-68: window roll-over resets lockout without extending it (10401.4178ms)
+    ✔ SECT-14: rate_limits.key_hash holds 32-byte digests; raw email or IP never appears (232.1176ms)
+    ✔ SECT-15: database failure during rate limiting fails closed with 503 SERVICE_UNAVAILABLE (9.0779ms)
+  ✔ Rate Limiting Policy & Verification (API-42, API-67, API-68, SECT-14, SECT-16) (34205.3114ms)
+  ▶ Concurrency Protections (CON-11, CON-12, CON-13)
+    ✔ CON-11: 20 parallel wrong-password logins in fresh window: exactly 5 return 401, 15 return 429; hits is 5 (5212.0146ms)
+    ✔ CON-12: after 4 sequential failures, 10 parallel wrong-password logins: exactly 1 returns 401, 9 return 429 (6949.8545ms)
+    ✔ CON-13: after 3 failures, parallel correct and wrong login: 200 and 401; 5 parallel correct on fresh key: 200 and hits 0 (13560.905ms)
+  ✔ Concurrency Protections (CON-11, CON-12, CON-13) (25723.2708ms)
+  ▶ Security & Logging (SECT-11)
+    ✔ SECT-11: captured logs after register, login, and logout contain no secrets or passwords (4686.2088ms)
+  ✔ Security & Logging (SECT-11) (4686.5001ms)
+✔ Phase 4: Authentication, Sessions, and Rate Limiting (115972.2289ms)
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+(node:1324) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Cart Validation API (API-21 to API-30, API-64)
+  ✔ API-21: valid lines return status ok and hand-calculated INR paise totals (2119.6098ms)
+  ✔ API-22: duplicate product IDs merge correctly by summing quantities (1111.7928ms)
+  ✔ API-23: quantity above stock returns quantity_reduced, allowedQuantity, INSUFFICIENT_STOCK, and blocking issue (693.8005ms)
+  ✔ API-24: stock 0 returns out_of_stock (692.8666ms)
+  ✔ API-25: unknown and inactive product IDs return unavailable (692.9764ms)
+  ✔ API-26: quantity 11 for a well-stocked product returns quantity_reduced with QUANTITY_CAPPED and allowedQuantity 10 (691.8003ms)
+  ✔ API-27: summary counts only ok lines; with no ok lines shippingMinor is 0 (1380.9878ms)
+  ✔ API-28: 51 lines, non-integer, negative, non-array return 400; empty array returns 200 with empty summary (2323.8525ms)
+  ✔ API-29: works without a session cookie (691.4693ms)
+  ✔ API-30: the 121st request from one IP inside 10 minutes returns 429 with Retry-After (4590.9164ms)
+✔ Cart Validation API (API-21 to API-30, API-64) (17313.9802ms)
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+(node:20768) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Categories API (API-03, API-14, API-16, API-18, API-64)
+  ✔ API-03 & API-14: returns 5 categories in sort order with active product counts only (1651.063ms)
+  ✔ API-16: returns only documented public fields (no internal database columns) (239.304ms)
+  ✔ API-18: Cache-Control is public, s-maxage=30, stale-while-revalidate=60 (234.6579ms)
+  ✔ API-64: all numeric fields are JSON numbers for which Number.isSafeInteger is true (236.7885ms)
+  ✔ rejects repeated query parameters with 400 VALIDATION_ERROR (Contract 4.1) (3.1543ms)
+✔ Categories API (API-03, API-14, API-16, API-18, API-64) (4706.3251ms)
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+(node:15716) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Phase 6: Concurrency Tests (CON-01 to CON-06)
+  ✔ CON-01: stock 1 with 2 concurrent users -> exactly one 201, one 409; final stock 0; exactly 1 order (7161.4622ms)
+CON-02 status counts: { '201': 5, '409': 5 }
+  ✔ CON-02: stock 5 with 10 parallel users -> exactly 5 succeed (201), 5 fail (409); final stock 0; 5 orders (13140.5787ms)
+  ✔ CON-03: deadlock freedom when ordering products A and B in opposite order across rounds (72391.9493ms)
+  ✔ CON-04: same user, same key, same body: 5 parallel requests return exactly one 201 and four 200 replays (7356.0198ms)
+  ✔ CON-05: 20 parallel orders create 20 unique order numbers (8775.9111ms)
+  ✔ CON-06: two parallel registrations with same email return exactly one 201 and one 409 (1731.0211ms)
+✔ Phase 6: Concurrency Tests (CON-01 to CON-06) (113038.4333ms)
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+▶ Health Endpoints (API-01, API-02)
+  ▶ API-01: GET /api/health (shallow)
+    ✔ returns 200 with status "ok" (33.5177ms)
+  ✔ API-01: GET /api/health (shallow) (34.6579ms)
+(node:20280) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ▶ API-02: GET /api/health?deep=1 (deep check)
+    ✔ returns 200 with status "ok" and database "up" when pool is healthy (1632.4849ms)
+    ✔ returns 503 SERVICE_UNAVAILABLE when database pool is unreachable (7.1022ms)
+    ✔ rejects duplicated query parameters with 400 VALIDATION_ERROR (Contract 4.1) (5.7612ms)
+  ✔ API-02: GET /api/health?deep=1 (deep check) (1645.9659ms)
+✔ Health Endpoints (API-01, API-02) (1699.7447ms)
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+(node:29732) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Phase 6: Order Endpoints (API-44 to API-66)
+  ✔ API-44 & API-63: all three order endpoints return 401 UNAUTHENTICATED without a session (46.1769ms)
+  ✔ API-45: missing, malformed, and non-UUID idempotency keys return 400 MISSING_IDEMPOTENCY_KEY (4038.627ms)
+  ✔ API-46, API-58, API-64, API-65: valid order returns 201 with exact paise totals, stock decremented, and invariant compliance (5853.8388ms)
+  ✔ API-47: forbidden client-supplied price/total/user fields are rejected without writes (2863.0993ms)
+  ✔ API-48: changed database price is used instead of previously displayed client price (4918.0517ms)
+  ✔ API-49 & API-50: invalid items rejected; empty cart rejected; duplicate lines merged and rejected if merged quantity exceeds 10 (5141.3953ms)
+  ✔ API-51: inactive or unknown product returns 409 with reason unavailable, no writes (3771.2222ms)
+  ✔ API-52: all stock conflicts are reported; no order or stock changes (4697.9082ms)
+  ✔ API-53: shipping validation rules return exact messages; phone stored as digits only; empty line2 as null (2856.1587ms)
+  ✔ API-54: replay of same key and body returns 200, replay header, one order, one stock decrement, even when stock drops to 0 (6971.1354ms)
+  ✔ API-55: same key with different body returns 409 IDEMPOTENCY_KEY_REUSED (6331.8215ms)
+  ✔ API-56: same key across different users creates independent orders (9544.5165ms)
+  ✔ API-57: 11th order attempt by one user in one hour returns 429 (32241.0686ms)
+  ✔ API-59: forced order-item insert failure returns generic 500 or 503, no order row exists, stock unchanged (5385.6105ms)
+  ✔ API-60: order list contains only caller orders, newest first, item count, at most 3 thumbnails, pagination (8800.7521ms)
+  ✔ API-61: another user order ID, random UUID, and malformed ID produce identical 404 responses (7683.7873ms)
+  ✔ API-62: order detail remains unchanged after product rename or repricing (5626.031ms)
+  ✔ API-66: corrupt values in database return generic 500 without leaking the value (3395.2726ms)
+✔ Phase 6: Order Endpoints (API-44 to API-66) (122527.2008ms)
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+(node:30956) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ Products API (API-04 to API-20, API-64, SECT-09)
+  ✔ API-04: default GET /api/products returns 12 items, total 20, 2 pages, featured sort (2123.8625ms)
+  ✔ API-05: page=2 returns remaining 8 products without overlap (1392.1893ms)
+  ✔ API-06: limit=1 and limit=48 work; limit=0, 49, abc return 400 VALIDATION_ERROR (1402.1779ms)
+  ✔ API-07: search matches product names case-insensitively (e.g. STAND) (696.8977ms)
+  ✔ API-08: search matches words appearing only in summary or description (697.8359ms)
+  ✔ API-09: search of % or _ matches nothing unless literally present in catalog (1392.5895ms)
+  ✔ API-10 & SECT-09: SQL injection strings in query parameters cause no errors or schema corruption (2093.0006ms)
+  ✔ API-11: category=lighting filters properly; unknown returns empty; malformed returns 400 (1171.2096ms)
+  ✔ API-12: all five sort orders return documented sequences with stable id tie-breaker (3469.2691ms)
+  ✔ API-13: invalid sort and repeated parameters return 400 VALIDATION_ERROR (4.7828ms)
+  ✔ API-14: inactive product never appears in lists or counts (696.1147ms)
+  ✔ API-15: stockStatus calculation rules and stock leak protection (692.9406ms)
+  ✔ API-16: ProductSummary contains only documented public fields (699.4794ms)
+  ✔ API-17: requesting page beyond the last returns 200 with empty items and requested page (461.7679ms)
+  ✔ API-18: Cache-Control is public, s-maxage=30, stale-while-revalidate=60 (1157.229ms)
+  ✔ API-19: GET /api/products/:slug returns ProductDetail with specs and ordered images (465.0144ms)
+  ✔ API-20: unknown slug, malformed slug, and inactive slug return 404 PRODUCT_NOT_FOUND (467.6396ms)
+  ✔ API-64: all money and count fields are JSON safe integers, none are strings (693.3431ms)
+✔ Products API (API-04 to API-20, API-64, SECT-09) (22326.7541ms)
+▶ Phase 2 Security & Middleware Tests
+  ▶ SECT-04: Origin & CSRF guard
+    ✔ rejects POST with unauthorized origin (403 FORBIDDEN_ORIGIN) (27.4925ms)
+    ✔ rejects POST with Origin: null (403 FORBIDDEN_ORIGIN) (4.5575ms)
+    ✔ allows same-origin POST request (11.6943ms)
+    ✔ rejects absent Origin with Sec-Fetch-Site: cross-site (403 FORBIDDEN_ORIGIN) (3.049ms)
+    ✔ allows absent Origin with Sec-Fetch-Site: same-origin (6.0292ms)
+    ✔ in production mode, rejects POST when both Origin and Sec-Fetch-Site are absent (403) (11.6445ms)
+    ✔ rejects state-changing request with form Content-Type (415 UNSUPPORTED_MEDIA_TYPE) (5.4284ms)
+  ✔ SECT-04: Origin & CSRF guard (71.2286ms)
+  ▶ SECT-05: Request body limits (20 kB)
+    ✔ rejects JSON payload exceeding 20 kB (20,480 bytes) with 413 PAYLOAD_TOO_LARGE (3.601ms)
+    ✔ rejects malformed JSON body with 400 INVALID_JSON (3.7561ms)
+  ✔ SECT-05: Request body limits (20 kB) (7.8677ms)
+  ▶ SECT-06: Unknown fields rejection schema check
+    ✔ rejects unknown fields with 400 VALIDATION_ERROR on strict schemas (7.8712ms)
+  ✔ SECT-06: Unknown fields rejection schema check (8.0824ms)
+  ▶ SECT-07: CORS restriction
+    ✔ never emits Access-Control-* headers on any response, including OPTIONS (3.4126ms)
+  ✔ SECT-07: CORS restriction (3.7421ms)
+  ▶ SECT-08: Server header suppression and helmet defaults
+    ✔ does not emit X-Powered-By header (1.9323ms)
+    ✔ emits standard helmet security headers (1.1884ms)
+  ✔ SECT-08: Server header suppression and helmet defaults (3.3571ms)
+  ▶ SECT-10: Error sanitization
+    ✔ returns generic envelope on internal 500 error without leaking stack or SQL (4.3348ms)
+  ✔ SECT-10: Error sanitization (4.4736ms)
+  ▶ 404 Routing Handlers
+    ✔ returns JSON ROUTE_NOT_FOUND on unknown /api/* path (2.1845ms)
+    ✔ returns HTML notFoundPage on unknown non-API path (2.3927ms)
+  ✔ 404 Routing Handlers (4.8151ms)
+✔ Phase 2 Security & Middleware Tests (126.2926ms)
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+▶ Storefront and Static Asset Serving
+  ▶ Homepage Routing (GET /)
+    ✔ returns 200 with text/html and Deskline home content (32.9601ms)
+  ✔ Homepage Routing (GET /) (33.8098ms)
+  ▶ Shop Catalogue Routing (GET /shop)
+    ✔ returns 200 with text/html and Shop catalogue content via cleanUrls (7.2083ms)
+    ✔ returns 200 for direct /shop.html as well (3.9048ms)
+  ✔ Shop Catalogue Routing (GET /shop) (11.548ms)
+  ▶ Phase 8 Clean URLs Routing
+    ✔ GET /product returns 200 HTML with Product Details (3.8797ms)
+    ✔ GET /cart returns 200 HTML with Cart (3.5863ms)
+    ✔ GET /checkout returns 200 HTML with Checkout (3.2675ms)
+    ✔ GET /order returns 200 HTML with Order Details (2.98ms)
+    ✔ GET /orders returns 200 HTML with Your orders (3.2053ms)
+    ✔ GET /login returns 200 HTML with Sign in (3.4151ms)
+    ✔ GET /register returns 200 HTML with Create account (3.0015ms)
+  ✔ Phase 8 Clean URLs Routing (24.2995ms)
+  ▶ CSS Asset Serving (GET /css/*.css)
+    ✔ serves /css/tokens.css with Content-Type: text/css and Cache-Control (2.7796ms)
+    ✔ serves /css/base.css with Content-Type: text/css (2.0314ms)
+    ✔ serves /css/components.css with Content-Type: text/css (2.5452ms)
+    ✔ serves /css/pages.css with Content-Type: text/css (2.5901ms)
+  ✔ CSS Asset Serving (GET /css/*.css) (10.3372ms)
+  ▶ Favicon & Media Assets
+    ✔ serves /favicon.ico with 200 (2.5316ms)
+    ✔ serves /icons/favicon.svg and /favicon.svg with 200 image/svg+xml (3.3189ms)
+    ✔ serves hero and category placeholder SVGs with 200 image/svg+xml (2.5711ms)
+  ✔ Favicon & Media Assets (8.787ms)
+  ▶ Routing Boundaries & 404 Behaviour
+    ✔ returns 404 HTML for unknown storefront route (/unknown-route) (3.4877ms)
+    ✔ returns 404 HTML for missing static asset (/css/missing.css) (1.6756ms)
+    ✔ returns 404 JSON for unknown API route (/api/non-existent-route) (2.3445ms)
+    ✔ blocks directory traversal attempts and returns 404 (1.3358ms)
+  ✔ Routing Boundaries & 404 Behaviour (9.1841ms)
+  ▶ Health API Continuity
+    ✔ GET /api/health still returns 200 ok (2.3923ms)
+(node:3468) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+    ✔ GET /api/health?deep=1 still returns 200 ok with database up (1668.5282ms)
+  ✔ Health API Continuity (1671.2302ms)
+✔ Storefront and Static Asset Serving (1785.2056ms)
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+(node:31108) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ DB-01: migration runner
+  ✔ schema_migrations table exists and has at least one row (232.631ms)
+  ✔ all expected tables exist after migration (234.6946ms)
+  ✔ order_number_seq exists (238.122ms)
+migrate: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+migrate: nothing to apply (all migrations already applied)
+  ✔ running migrations again is a no-op (idempotent) (3020.336ms)
+  ✔ runMigrations refuses a pooled connection string (0.976ms)
+✔ DB-01: migration runner (5368.0661ms)
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+(node:10864) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ DB-09 & DB-10: Order Database Persistence and Concurrency
+  ✔ DB-09: order persistence is verified through a separate database connection; forced failure leaves no order and no stock change (11164.9634ms)
+  ✔ DB-10: 20 parallel order-number sequence calls produce unique order numbers (2850.1918ms)
+  ✔ verifies 23505 unique-constraint fallback retries in a fresh transaction and succeeds on matching hash (6455.479ms)
+✔ DB-09 & DB-10: Order Database Persistence and Concurrency (22133.4913ms)
+assertSafeTestDatabase: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+(node:6896) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ DB-02 to DB-13: schema and data integrity
+  ▶ DB-02: constraint violations
+    ✔ rejects email that is not lower-case (940.086ms)
+    ✔ rejects duplicate email (1170.351ms)
+    ✔ rejects product price_minor of 0 (1168.716ms)
+    ✔ rejects product price_minor that is negative (1186.8932ms)
+    ✔ rejects product price_minor not a multiple of 100 (e.g. 150) (1167.5431ms)
+    ✔ rejects product with negative stock_quantity (1165.923ms)
+    ✔ rejects product with bad slug (contains uppercase) (1170.0682ms)
+    ✔ rejects featured_rank of 0 (must be > 0 or NULL) (1167.9062ms)
+    ✔ rejects order whose total_minor ≠ subtotal_minor + shipping_minor (1170.2933ms)
+    ✔ rejects order with currency other than INR (1223.6683ms)
+    ✔ rejects shipping_phone with fewer than 10 digits (1168.8795ms)
+    ✔ rejects order_item line_total_minor ≠ unit_price_minor × quantity (1640.9641ms)
+    ✔ rejects order_item quantity of 0 (1636.0068ms)
+    ✔ rejects order_item quantity of 101 (1629.8106ms)
+    ✔ rejects duplicate (order_id, product_id) (1873.7811ms)
+    ✔ rejects duplicate (user_id, idempotency_key) in orders (1419.2783ms)
+    ✔ rejects product_images with URL not starting with /images/ (1167.203ms)
+  ✔ DB-02: constraint violations (22070.3429ms)
+  ▶ DB-03: foreign key enforcement
+    ✔ deleting a product with order_items fails (1866.8554ms)
+    ✔ deleting a user with orders fails (1404.213ms)
+    ✔ deleting a user cascades to their sessions (1869.5317ms)
+    ✔ deleting an order cascades to its items (2133.9459ms)
+  ✔ DB-03: foreign key enforcement (7275.101ms)
+  ▶ DB-04: named indexes exist
+    ✔ index "users_email_key" exists (939.5601ms)
+    ✔ index "sessions_token_hash_key" exists (935.3674ms)
+    ✔ index "products_category_idx" exists (938.5563ms)
+    ✔ index "products_newest_idx" exists (937.0617ms)
+    ✔ index "products_price_idx" exists (936.8767ms)
+    ✔ index "products_featured_idx" exists (935.9425ms)
+    ✔ index "orders_user_created_idx" exists (938.9975ms)
+    ✔ index "order_items_product_idx" exists (937.0094ms)
+    ✔ index "rate_limits_window_idx" exists (934.993ms)
+  ✔ DB-04: named indexes exist (8435.4434ms)
+  ▶ DB-05: seeded counts match §7.5
+    ✔ has exactly 5 categories (934.5776ms)
+    ✔ has exactly 21 products (20 active, 1 inactive) (939.3405ms)
+    ✔ desk-mats category has exactly 4 active products (936.3135ms)
+    ✔ exactly 1 active product with stock 0 (out of stock) (937.7207ms)
+    ✔ exactly 2 active products with stock 1..5 (low stock) (934.5402ms)
+    ✔ featured ranks 1, 2, 3, and 4 each appear exactly once (933.1961ms)
+    ✔ the long-name product is present (937.5658ms)
+    ✔ the inactive product is present and not active (937.7694ms)
+  ✔ DB-05: seeded counts match §7.5 (7491.8825ms)
+seed: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+seed: done. categories=5 products=21 (active=20, out_of_stock=1, low_stock=2)
+  ▶ DB-06: seed idempotence
+    ✔ running the seed twice gives identical counts (17418.8812ms)
+seed: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+seed: done. categories=5 products=21 (active=20, out_of_stock=1, low_stock=2)
+    ✔ stock changed between runs is not overwritten (without --reset-stock) (17669.3657ms)
+seed: target ep-lively-paper-b5fqitlt.c-7.us-east-2.aws.neon.tech/neondb
+seed: done. categories=5 products=21 (active=20, out_of_stock=1, low_stock=2)
+    ✔ --reset-stock option restores stock to catalog values (17279.1436ms)
+  ✔ DB-06: seed idempotence (52367.9722ms)
+  ▶ DB-07: seeded price_minor values
+    ✔ every seeded price_minor is a positive integer multiple of 100 (949.0306ms)
+  ✔ DB-07: seeded price_minor values (949.3459ms)
+  ▶ DB-08: updated_at changes on update
+    ✔ updating a user row advances updated_at (1440.4705ms)
+    ✔ updating a product row advances updated_at (1431.4658ms)
+  ✔ DB-08: updated_at changes on update (2872.2845ms)
+  ▶ DB-11: assertSafeTestDatabase exit conditions
+    ✔ test-db-reset script refuses when NODE_ENV is not test (701.995ms)
+  ✔ DB-11: assertSafeTestDatabase exit conditions (702.2517ms)
+  ▶ DB-12: idempotency backstop
+    ✔ second insert of the same (user_id, idempotency_key) gets SQLSTATE 23505 on orders_idempotency_key (1418.8991ms)
+    ✔ same idempotency_key for two different users succeeds (1697.298ms)
+    ✔ SELECT hashtextextended and pg_advisory_xact_lock run without error (1669.5194ms)
+  ✔ DB-12: idempotency backstop (4786.2746ms)
+  ▶ DB-13: no global type parser overrides
+    ✔ SELECT 1::bigint returns string "1" (not number 1) (937.3783ms)
+    ✔ SELECT 1::numeric returns a string (not a number) (936.7468ms)
+    ✔ SELECT 1::integer returns number 1 (not a string) (937.026ms)
+  ✔ DB-13: no global type parser overrides (2811.6122ms)
+✔ DB-02 to DB-13: schema and data integrity (111424.5233ms)
+▶ STAT-08: no express.static in src/
+  ✔ express.static does not appear in any file in src/ (12.8368ms)
+✔ STAT-08: no express.static in src/ (14.1225ms)
+▶ STAT-13: Database access rules
+  ✔ no setTypeParser or parseInt8 in src/, scripts/, or tests/helpers/ (11.6719ms)
+  ✔ @vercel/functions is imported only in src/db/pool.js (6.1229ms)
+  ✔ new Pool( appears only in src/db/pool.js, scripts/, and tests/helpers/ (4.6455ms)
+✔ STAT-13: Database access rules (23.8656ms)
+▶ STAT-07: .env.example and .env.test.example
+  ✔ .env.example exists (1.1774ms)
+  ✔ .env.test.example exists (0.2572ms)
+  ✔ .env.example contains no TEST_* variable (0.1713ms)
+  ✔ .env.example contains no VERCEL variable (system-set) (0.1149ms)
+  ✔ .env.example lists all app config variables except VERCEL and test-only vars (0.1272ms)
+  ✔ .env.test.example contains NODE_ENV=test (0.1284ms)
+  ✔ .env.test.example contains no DATABASE_URL (only TEST_DATABASE_URL) (0.106ms)
+  ✔ .env.test.example contains no DATABASE_URL_UNPOOLED (0.1804ms)
+  ✔ .env.test.example contains TEST_DATABASE_URL (0.1441ms)
+  ✔ .env.test.example contains TEST_DB_DISPOSABLE with an empty value (0.2715ms)
+  ✔ .env.example values are placeholders (no real credential patterns) (0.2751ms)
+✔ STAT-07: .env.example and .env.test.example (4.3173ms)
+▶ Frontend Static Checks (Phase 7)
+  ✔ STAT-01: No innerHTML, insertAdjacentHTML, document.write, eval(, or new Function in public/js (7.4703ms)
+  ✔ STAT-02: No inline <script> bodies, no on*= attributes, no style= attributes in public/*.html (4.0018ms)
+  ✔ STAT-03: No http:// or https:// URLs in public/ except SVG namespace and repo link (5.832ms)
+  ✔ STAT-09: Browser storage usage in public/js is limited to authorized keys and never writes tokens (2.5975ms)
+  ✔ STAT-10: Every target="_blank" link has rel="noopener noreferrer" (1.6918ms)
+  ✔ STAT-11: HTML validity: lang, unique title, exactly one h1, viewport, unique element ids, and img alt/width/height (2.9347ms)
+  ✔ STAT-12: Zero payment integrations, gateways, SDKs, or card inputs; payment word restricted to demo notices (19.6464ms)
+  ✔ STAT-14: Font assets integrity, CSS references only /fonts/..., and zero font dependencies in package.json (0.9362ms)
+✔ Frontend Static Checks (Phase 7) (46.9323ms)
+▶ STAT-05: package.json structure
+  ✔ has type === "module" (0.9014ms)
+  ✔ has engines.node === "22.x" (0.1265ms)
+  ✔ has no devDependencies key (0.1568ms)
+  ✔ has exactly the seven approved production dependencies (0.7193ms)
+  ✔ contains no font package in dependencies (0.1599ms)
+  ✔ has the dev script matching section 7.2 exactly (0.1175ms)
+  ✔ has the db:migrate script matching section 7.2 exactly (0.1181ms)
+  ✔ has the db:seed script matching section 7.2 exactly (0.1134ms)
+  ✔ has the db:setup script matching section 7.2 exactly (0.1362ms)
+  ✔ has the test:db:reset script matching section 7.2 exactly (0.1451ms)
+  ✔ has the test:unit script matching section 7.2 exactly (0.1301ms)
+  ✔ has the test script matching section 7.2 exactly (0.0897ms)
+  ✔ has the audit script matching section 7.2 exactly (0.0745ms)
+  ✔ no script contains an inline environment assignment (VAR=value node ...) (1.0816ms)
+  ✔ no script uses POSIX-only commands (cp, rm, export) (0.2588ms)
+  ✔ no script uses cross-env (0.1307ms)
+  ✔ no script uses single-quoted strings (0.1093ms)
+✔ STAT-05: package.json structure (6.1639ms)
+▶ Frontend API Client (Phase 7)
+  ✔ rejects endpoints that do not start with relative /api/ (1.4058ms)
+  ✔ sends credentials: "same-origin" and sets json headers (25.4094ms)
+  ✔ handles 204 No Content responses cleanly without parsing JSON (0.4785ms)
+  ✔ normalizes error responses into ApiError instances with code and details (0.699ms)
+  ✔ handles non-JSON error bodies gracefully (e.g. 500 HTML error page) (0.4524ms)
+✔ Frontend API Client (Phase 7) (31.7147ms)
+▶ UT-04: validators/auth.js
+  ▶ validateRegister — valid inputs & normalization
+    ✔ normalizes valid input (trims name, trims and lowercases email) (1.4081ms)
+    ✔ accepts password of exactly 8 characters (0.2299ms)
+    ✔ accepts password of exactly 72 UTF-8 bytes (0.1742ms)
+  ✔ validateRegister — valid inputs & normalization (2.6622ms)
+  ▶ validateRegister — field rejection rules
+    ✔ rejects password shorter than 8 characters (7 chars fails, 8 passes) (0.5545ms)
+    ✔ rejects password longer than 72 UTF-8 bytes (73 fails) (0.1981ms)
+    ✔ rejects multi-byte password exceeding 72 UTF-8 bytes (0.2044ms)
+    ✔ rejects password equal to email (exact and case-insensitive) (0.2336ms)
+    ✔ rejects invalid names (empty, whitespace-only, >80 chars, control characters) (0.2483ms)
+    ✔ rejects invalid email formats (0.302ms)
+    ✔ rejects unknown fields (confirmPassword, role, isAdmin, etc.) (0.2724ms)
+  ✔ validateRegister — field rejection rules (2.4507ms)
+  ▶ validateLogin — rules and normalization
+    ✔ normalizes valid login input (0.2603ms)
+    ✔ rejects missing or empty email/password without revealing password rules (0.1559ms)
+    ✔ rejects unknown fields in login body (0.1524ms)
+  ✔ validateLogin — rules and normalization (0.7152ms)
+✔ UT-04: validators/auth.js (6.4112ms)
+▶ UT-12: cart-store.js with injected storage
+  ✔ uses ONLY the authorized storage key "deskline.cart.v1" (1.7578ms)
+  ✔ corrupt JSON in storage safely falls back to an empty cart (0.2036ms)
+  ✔ drops wrong shapes, non-objects, and non-integer values (0.2475ms)
+  ✔ clamps quantities to bounds [1, 10] (0.1775ms)
+  ✔ adding the same product increments its quantity up to 10 (0.3152ms)
+  ✔ caps cart at a maximum of 50 distinct lines (2.5275ms)
+  ✔ updates quantity and removes line when quantity is set to 0 (0.3193ms)
+  ✔ computes total item count accurately (0.2698ms)
+  ✔ handles storage errors (e.g. QuotaExceededError or private mode) gracefully without crashing (0.4185ms)
+  ✔ avoids unnecessary storage writes when state has not changed (0.3336ms)
+  ✔ updates cart listeners when a window storage event occurs (0.242ms)
+✔ UT-12: cart-store.js with injected storage (8.3815ms)
+▶ Cart Validator (validateCartValidate)
+  ✔ accepts an empty items array (1.3687ms)
+  ✔ accepts valid items with quantities including quantities > 10 (0.1867ms)
+  ✔ rejects non-object, null, or array request bodies (0.4509ms)
+  ✔ rejects unknown root fields on request body (0.2059ms)
+  ✔ rejects missing or non-array items field (0.1889ms)
+  ✔ rejects carts exceeding 50 items (51 items) (0.1675ms)
+  ✔ rejects non-object elements inside items array (0.1731ms)
+  ✔ rejects unknown fields on item objects (0.2077ms)
+  ✔ rejects non-integer, negative, or zero productId values (0.5649ms)
+  ✔ rejects non-integer, negative, or zero quantity values (0.3373ms)
+✔ Cart Validator (validateCartValidate) (5.2594ms)
+▶ UT-11: loadConfig — basic success cases
+  ✔ returns frozen config for a minimal valid development env (1.6727ms)
+  ✔ returns frozen config for a minimal valid test env (0.2009ms)
+  ✔ returns frozen config for a minimal valid production env (0.1595ms)
+  ✔ exposes application constants (not env vars) (0.1417ms)
+✔ UT-11: loadConfig — basic success cases (3.2452ms)
+▶ UT-11: loadConfig — NODE_ENV validation
+  ✔ fails when NODE_ENV is missing (0.3172ms)
+  ✔ fails when NODE_ENV is an unrecognised value (0.1405ms)
+  ✔ lists all failures in one error (does not stop at first) (0.2411ms)
+✔ UT-11: loadConfig — NODE_ENV validation (0.9487ms)
+▶ UT-11: loadConfig — DATABASE_URL validation
+  ✔ fails when DATABASE_URL is missing (0.2443ms)
+  ✔ fails when DATABASE_URL has wrong scheme (0.1529ms)
+  ✔ fails in production when DATABASE_URL has no -pooler in host (0.204ms)
+  ✔ fails in production when DATABASE_URL lacks sslmode=require (0.1838ms)
+  ✔ accepts a direct (non-pooler) URL in test mode (0.1462ms)
+✔ UT-11: loadConfig — DATABASE_URL validation (1.2601ms)
+▶ UT-11: loadConfig — STORE_CURRENCY
+  ✔ fails when STORE_CURRENCY is missing (0.2161ms)
+  ✔ fails when STORE_CURRENCY is USD (0.1302ms)
+  ✔ fails when STORE_CURRENCY is EUR (0.0977ms)
+  ✔ accepts STORE_CURRENCY=INR (0.1027ms)
+✔ UT-11: loadConfig — STORE_CURRENCY (0.7241ms)
+▶ UT-11: loadConfig — SHIPPING_FLAT_MINOR
+  ✔ fails when SHIPPING_FLAT_MINOR is missing (0.1323ms)
+  ✔ fails when SHIPPING_FLAT_MINOR is 9950 (not a multiple of 100) (0.1076ms)
+  ✔ fails when SHIPPING_FLAT_MINOR is negative (0.0858ms)
+  ✔ fails when SHIPPING_FLAT_MINOR is a float (0.0787ms)
+  ✔ accepts SHIPPING_FLAT_MINOR=0 (free shipping) (0.0878ms)
+  ✔ accepts SHIPPING_FLAT_MINOR=9900 (0.0938ms)
+✔ UT-11: loadConfig — SHIPPING_FLAT_MINOR (0.7864ms)
+▶ UT-11: loadConfig — SESSION_COOKIE_NAME
+  ✔ uses default deskline_session when unset in development (0.1367ms)
+  ✔ uses default deskline_session when unset in test mode (0.0939ms)
+  ✔ fails when SESSION_COOKIE_NAME does not match pattern (0.1291ms)
+  ✔ fails in production when SESSION_COOKIE_NAME does not start with __Host- (0.1191ms)
+  ✔ accepts __Host- cookie name in production (0.0969ms)
+  ✔ accepts default cookie name in test mode (no __Host- required) (0.0748ms)
+✔ UT-11: loadConfig — SESSION_COOKIE_NAME (0.8398ms)
+▶ UT-11: loadConfig — pool settings
+  ✔ fails when DB_POOL_MAX is 1 (below minimum of 2) (0.1718ms)
+  ✔ passes when DB_POOL_MAX is 2 (0.0777ms)
+  ✔ fails when DB_POOL_MAX is 11 (above maximum of 10) (0.0955ms)
+  ✔ defaults DB_POOL_MAX to 5 (0.1119ms)
+  ✔ fails when DB_POOL_IDLE_TIMEOUT_MS is 999 (below 1000) (0.0877ms)
+  ✔ fails when DB_POOL_CONNECTION_TIMEOUT_MS is 30001 (above 30000) (0.1071ms)
+  ✔ fails when DB_STATEMENT_TIMEOUT_MS is 60001 (above 60000) (0.0919ms)
+  ✔ populates the db group with parsed integers (0.0983ms)
+✔ UT-11: loadConfig — pool settings (1.1011ms)
+▶ UT-11: loadConfig — VERCEL / runtime.onVercel
+  ✔ sets runtime.onVercel=true when VERCEL is set to any value (0.112ms)
+  ✔ sets runtime.onVercel=false when VERCEL is absent (0.0922ms)
+✔ UT-11: loadConfig — VERCEL / runtime.onVercel (0.3079ms)
+▶ UT-11: loadConfig — error messages never contain values
+  ✔ error message does not include the bad value string (0.1255ms)
+  ✔ error message does not include the DATABASE_URL value (0.0955ms)
+✔ UT-11: loadConfig — error messages never contain values (0.3062ms)
+▶ UT-11: loadConfig — ORDER_NUMBER_PREFIX
+  ✔ defaults to DL (0.1331ms)
+  ✔ accepts 2-letter prefix (0.0909ms)
+  ✔ accepts 4-letter prefix (0.096ms)
+  ✔ fails for 1-letter prefix (0.1392ms)
+  ✔ fails for 5-letter prefix (0.1123ms)
+  ✔ fails for lowercase letters (0.093ms)
+✔ UT-11: loadConfig — ORDER_NUMBER_PREFIX (0.8994ms)
+▶ UT-11: loadConfig — SESSION_TTL_DAYS and BCRYPT_COST
+  ✔ defaults SESSION_TTL_DAYS to 7 (0.145ms)
+  ✔ fails when SESSION_TTL_DAYS is 0 (0.0885ms)
+  ✔ fails when SESSION_TTL_DAYS is 31 (0.0757ms)
+  ✔ defaults BCRYPT_COST to 12 (0.1016ms)
+  ✔ fails when BCRYPT_COST is 9 (0.0965ms)
+  ✔ fails when BCRYPT_COST is 15 (0.0872ms)
+✔ UT-11: loadConfig — SESSION_TTL_DAYS and BCRYPT_COST (0.7979ms)
+▶ UT-11: loadConfig — LOG_LEVEL
+  ✔ defaults to info (0.0996ms)
+  ✔ fails for an unrecognised level (0.0842ms)
+  ✔ accepts each valid level (0.1187ms)
+✔ UT-11: loadConfig — LOG_LEVEL (0.3959ms)
+▶ UT-11: loadConfig — config is deeply frozen
+  ✔ top-level object is frozen (0.4385ms)
+  ✔ nested db object is frozen (0.1003ms)
+  ✔ nested runtime object is frozen (0.0906ms)
+✔ UT-11: loadConfig — config is deeply frozen (0.7324ms)
+▶ UT-07: lib/escapeLike.js
+  ✔ leaves normal alphanumeric text unchanged (1.4359ms)
+  ✔ escapes percent wildcard (%) (0.1528ms)
+  ✔ escapes underscore wildcard (_) (0.1321ms)
+  ✔ escapes backslash escape character (\) (0.1144ms)
+  ✔ escapes combinations of %, _, and \ without double-escaping (0.1202ms)
+  ✔ handles empty and non-string inputs gracefully (0.1287ms)
+✔ UT-07: lib/escapeLike.js (3.2862ms)
+▶ formatMinor (Phase 7 / E0)
+  ✔ formats standard prices to whole-rupee INR strings (2.4214ms)
+  ✔ correctly applies Indian grouping to larger amounts (₹1,00,000) (0.1811ms)
+  ✔ accepts valid numeric string inputs (0.279ms)
+  ✔ rejects negative numbers and negative strings (0.4274ms)
+  ✔ rejects non-integer and float numbers (0.1833ms)
+  ✔ rejects NaN, Infinity, null, and non-numeric types (0.2168ms)
+✔ formatMinor (Phase 7 / E0) (4.9781ms)
+▶ Phase 8: Frontend DOM & Controller Helpers
+  ✔ el() creates elements with classes, attributes, dataset, and children (2.1927ms)
+  ✔ clearChildren() removes all child nodes (0.3951ms)
+  ✔ icon() constructs valid SVG with accessible attributes (0.4928ms)
+  ✔ createInlineAlert() constructs alert with correct role and icon (0.5252ms)
+  ✔ createEmptyState() constructs empty state panel (0.3519ms)
+  ✔ createProductCard() produces complete card structure (17.7859ms)
+  ✔ all controller modules export their main initialization functions (10.4609ms)
+  ✔ showToast() supports action button for cart Undo and executes callback (1.0528ms)
+✔ Phase 8: Frontend DOM & Controller Helpers (35.4018ms)
+▶ UT-01: lib/money.js
+  ▶ assertMinor
+    ✔ accepts non-negative safe integers (1.1308ms)
+    ✔ rejects floating-point numbers (1.0372ms)
+    ✔ rejects negative numbers (0.3702ms)
+    ✔ rejects NaN and Infinities (0.3514ms)
+    ✔ rejects non-numeric types (0.4733ms)
+    ✔ rejects unsafe integers above 2^53 - 1 (0.2706ms)
+  ✔ assertMinor (5.142ms)
+  ▶ isWholeRupee and assertWholeRupee
+    ✔ isWholeRupee returns true for multiples of 100 paise (0.4366ms)
+    ✔ isWholeRupee returns false for non-multiples of 100 or invalid values (0.332ms)
+    ✔ assertWholeRupee accepts whole rupee amounts (0.3116ms)
+    ✔ assertWholeRupee throws for non-multiples of 100 (e.g., config 9950) (0.3688ms)
+  ✔ isWholeRupee and assertWholeRupee (2.7573ms)
+  ▶ mulMinor and calculateLineTotal
+    ✔ multiplies valid paise by integer quantity correctly (0.2617ms)
+    ✔ rejects invalid quantities (0.2112ms)
+  ✔ mulMinor and calculateLineTotal (0.6382ms)
+  ▶ sumMinor
+    ✔ sums valid paise array correctly (0.2938ms)
+    ✔ rejects invalid inputs to sumMinor (0.1813ms)
+  ✔ sumMinor (0.6273ms)
+  ▶ calculateOrderTotals
+    ✔ calculates line totals, subtotal, shipping, and total for known inputs (0.7289ms)
+    ✔ rejects invalid shipping amounts (0.1545ms)
+  ✔ calculateOrderTotals (0.9972ms)
+✔ UT-01: lib/money.js (11.1068ms)
+▶ UT-13: toSafeMinor and toSafeCount
+  ▶ toSafeMinor
+    ✔ accepts valid value: 0 (number) (1.148ms)
+    ✔ accepts valid value: "0" (string) (0.2065ms)
+    ✔ accepts valid value: 549700 (number) (0.1347ms)
+    ✔ accepts valid value: "549700" (string) (0.8166ms)
+    ✔ accepts valid value: 9007199254740991 (number) (0.0976ms)
+    ✔ accepts valid value: "9007199254740991" (string) (0.2029ms)
+    ✔ rejects invalid value: -1 (number) (0.4955ms)
+    ✔ rejects invalid value: "-1" (string) (0.1402ms)
+    ✔ rejects invalid value: 1.5 (number) (0.1225ms)
+    ✔ rejects invalid value: "1.5" (string) (0.1668ms)
+    ✔ rejects invalid value: "1e3" (string) (0.1139ms)
+    ✔ rejects invalid value: " 12" (string) (0.072ms)
+    ✔ rejects invalid value: "012" (string) (0.06ms)
+    ✔ rejects invalid value: "" (string) (0.0677ms)
+    ✔ rejects invalid value: null (object) (0.0658ms)
+    ✔ rejects invalid value: undefined (undefined) (0.0623ms)
+    ✔ rejects invalid value: null (number) (0.0706ms)
+    ✔ rejects invalid value: null (number) (0.0774ms)
+    ✔ rejects invalid value: "Infinity" (string) (0.0642ms)
+    ✔ rejects invalid value: 9007199254740992 (number) (0.0526ms)
+    ✔ rejects invalid value: "9007199254740992" (string) (0.0511ms)
+    ✔ rejects invalid value: true (boolean) (0.0577ms)
+    ✔ rejects invalid value: false (boolean) (0.0538ms)
+    ✔ rejects invalid value: {} (object) (0.0785ms)
+    ✔ rejects invalid value: [] (object) (0.0626ms)
+    ✔ rejects invalid value: {"value":100} (object) (0.0611ms)
+    ✔ rejects invalid value: [100] (object) (0.0457ms)
+  ✔ toSafeMinor (6.6234ms)
+  ▶ toSafeCount
+    ✔ accepts valid value: 0 (number) (0.2622ms)
+    ✔ accepts valid value: "0" (string) (0.0434ms)
+    ✔ accepts valid value: 549700 (number) (0.0408ms)
+    ✔ accepts valid value: "549700" (string) (0.0583ms)
+    ✔ accepts valid value: 9007199254740991 (number) (0.0458ms)
+    ✔ accepts valid value: "9007199254740991" (string) (0.0463ms)
+    ✔ rejects invalid value: -1 (number) (0.1556ms)
+    ✔ rejects invalid value: "-1" (string) (0.06ms)
+    ✔ rejects invalid value: 1.5 (number) (0.0548ms)
+    ✔ rejects invalid value: "1.5" (string) (0.0521ms)
+    ✔ rejects invalid value: "1e3" (string) (0.0683ms)
+    ✔ rejects invalid value: " 12" (string) (0.0701ms)
+    ✔ rejects invalid value: "012" (string) (0.0713ms)
+    ✔ rejects invalid value: "" (string) (0.0561ms)
+    ✔ rejects invalid value: null (object) (0.0595ms)
+    ✔ rejects invalid value: undefined (undefined) (0.0594ms)
+    ✔ rejects invalid value: null (number) (0.0545ms)
+    ✔ rejects invalid value: null (number) (0.0507ms)
+    ✔ rejects invalid value: "Infinity" (string) (0.0679ms)
+    ✔ rejects invalid value: 9007199254740992 (number) (0.0659ms)
+    ✔ rejects invalid value: "9007199254740992" (string) (0.0711ms)
+    ✔ rejects invalid value: true (boolean) (0.072ms)
+    ✔ rejects invalid value: false (boolean) (0.0713ms)
+    ✔ rejects invalid value: {} (object) (0.0697ms)
+    ✔ rejects invalid value: [] (object) (0.0564ms)
+    ✔ rejects invalid value: {"value":100} (object) (0.0515ms)
+    ✔ rejects invalid value: [100] (object) (0.0502ms)
+  ✔ toSafeCount (2.5399ms)
+✔ UT-13: toSafeMinor and toSafeCount (9.6299ms)
+▶ UT-06: validators/orders.js — Input validation
+  ✔ accepts a valid order payload and normalises fields (1.5306ms)
+  ▶ Strict schema: forbidden and unknown fields
+    ✔ rejects client-supplied priceMinor and totalMinor (0.6109ms)
+    ✔ rejects userId and confirmPassword (0.232ms)
+    ✔ rejects legacy *Cents fields (0.2429ms)
+    ✔ rejects unknown fields inside line items (0.2267ms)
+  ✔ Strict schema: forbidden and unknown fields (1.6618ms)
+  ▶ Line items, quantities, and merging
+    ✔ rejects empty items with "Your cart is empty." (0.3593ms)
+    ✔ rejects more than 50 items (0.2163ms)
+    ✔ rejects quantity 0, -1, 11, 1.5, "2", null with "Quantity must be between 1 and 10." (0.3388ms)
+    ✔ merges duplicate product lines by summing quantities (0.7927ms)
+    ✔ accepts duplicate product lines when merged quantity is <= 10 (Product 1 qty 4 + qty 5 = 9) (0.2309ms)
+    ✔ accepts duplicate product lines when merged quantity equals exactly 10 (Product 1 qty 6 + qty 4 = 10) (0.1887ms)
+    ✔ rejects duplicate product lines whose merged quantity exceeds 10 (Product 1 qty 6 + qty 6 = 12) (0.1877ms)
+    ✔ rejects three duplicate lines whose combined quantity exceeds 10 (e.g. 4 + 4 + 3 = 11) (0.167ms)
+    ✔ canonical request hash is identical for duplicate lines vs pre-merged single line (0.2294ms)
+  ✔ Line items, quantities, and merging (3.1767ms)
+  ▶ Shipping validation
+    ✔ validates fullName rules (0.4682ms)
+    ✔ normalises phone and enforces 10 to 15 digit rule (0.2822ms)
+    ✔ enforces addressLine1 rule (0.1619ms)
+    ✔ normalises empty addressLine2 to null and enforces length limit (0.2559ms)
+    ✔ enforces city and region rules (0.214ms)
+    ✔ enforces postal code rules (0.2276ms)
+  ✔ Shipping validation (1.8909ms)
+  ▶ Idempotency-Key validation
+    ✔ accepts valid UUID v4 (0.2449ms)
+    ✔ rejects missing or non-UUID Idempotency-Key with 400 MISSING_IDEMPOTENCY_KEY (0.3245ms)
+  ✔ Idempotency-Key validation (0.6979ms)
+✔ UT-06: validators/orders.js — Input validation (10.0346ms)
+▶ UT-09: Request hash determinism
+  ✔ produces the identical request hash regardless of item order, duplicate merging, or JSON key order (0.25ms)
+  ✔ changes the hash when quantity changes (0.1965ms)
+  ✔ changes the hash when shipping details change (0.1336ms)
+✔ UT-09: Request hash determinism (0.7363ms)
+▶ UT-08: lib/orderNumber.js
+  ✔ formats standard order numbers matching ^[A-Z]{2,4}-[0-9]{6,}$ (16.3734ms)
+  ✔ pads sequence numbers to at least 6 digits (0.3305ms)
+  ✔ handles sequences with 7 or more digits without truncation (0.1845ms)
+  ✔ rejects invalid prefixes (0.3177ms)
+  ✔ rejects invalid sequence values (0.2497ms)
+✔ UT-08: lib/orderNumber.js (18.9785ms)
+▶ UT-02: lib/passwords.js
+  ✔ hash differs from plaintext input and starts with valid bcrypt prefix (77.1119ms)
+  ✔ two hashes of the same password produce distinct salt/hash outputs (138.8185ms)
+  ✔ comparePassword returns true for matching password, false for mismatch (208.0189ms)
+  ✔ respects the cost parameter passed to hashPassword (203.8456ms)
+  ✔ rejects passwords over 72 UTF-8 bytes (ASCII and multi-byte) (140.3724ms)
+  ✔ dummy-hash path exists and returns false without throwing (70.9815ms)
+✔ UT-02: lib/passwords.js (841.3028ms)
+▶ UT-14: createPool
+  ✔ calls attachDatabasePool exactly once when onVercel is true and logs db_pool_attached (1.7344ms)
+  ✔ does NOT call attachDatabasePool when onVercel is false (0.2548ms)
+  ✔ passes configured pool options (max, idleTimeoutMillis, connectionTimeoutMillis, statement_timeout) (0.2513ms)
+  ✔ handles error event on the pool without throwing and logs code only (0.3743ms)
+✔ UT-14: createPool (3.8425ms)
+▶ UT-05: validators/products.js
+  ▶ validateProductQuery — defaults and valid inputs
+    ✔ applies documented defaults on empty query (1.3221ms)
+    ✔ accepts valid page and limit boundary values (0.2505ms)
+    ✔ accepts numeric integer values for page and limit (0.1226ms)
+    ✔ accepts all documented sort options (0.1847ms)
+    ✔ accepts a valid category slug (0.2363ms)
+    ✔ normalizes search query: trims and collapses inner whitespace (0.2038ms)
+    ✔ treats whitespace-only or empty search as absent (0.1582ms)
+    ✔ accepts search string of exactly 80 characters (0.1269ms)
+    ✔ ignores unknown query parameters without throwing (Contract 4.1) (0.1486ms)
+  ✔ validateProductQuery — defaults and valid inputs (3.874ms)
+  ▶ validateProductQuery — rejection of invalid inputs
+    ✔ rejects repeated query parameters with 400 VALIDATION_ERROR (Contract 4.1, API-13) (0.9844ms)
+    ✔ rejects invalid limit values (0, 49, negative, non-integer, strings) (API-06) (0.3057ms)
+    ✔ rejects invalid page values (0, 10001, negative, non-integer, strings) (0.2737ms)
+    ✔ rejects invalid sort enum values (API-13) (0.1858ms)
+    ✔ rejects malformed category slugs (API-11) (0.2881ms)
+    ✔ rejects search string longer than 80 characters (0.1448ms)
+  ✔ validateProductQuery — rejection of invalid inputs (2.4965ms)
+  ▶ Product and Category Slug Validators
+    ✔ isValidProductSlug validates correct slug format (0.2822ms)
+    ✔ isValidCategorySlug validates correct slug format and 60 char limit (0.1549ms)
+    ✔ validateProductSlug throws 404 PRODUCT_NOT_FOUND on malformed slug (API-20) (0.1354ms)
+  ✔ Product and Category Slug Validators (0.7232ms)
+✔ UT-05: validators/products.js (7.6697ms)
+▶ UT-10: safe-redirect.js
+  ✔ accepts legitimate local paths (/cart, /checkout, /, /shop, /orders) (1.0185ms)
+  ✔ accepts valid paths with query parameters (0.2785ms)
+  ✔ rejects protocol-relative URLs (//evil.com) (0.1309ms)
+  ✔ rejects external protocol URLs (https://evil.com, http://evil.com) (0.1173ms)
+  ✔ rejects backslash bypasses (/\evil, \evil.com) (0.1128ms)
+  ✔ rejects javascript: and data: schemes (0.1486ms)
+  ✔ rejects paths with control characters or whitespace (0.1187ms)
+  ✔ rejects unknown or arbitrary paths outside the application (0.2ms)
+  ✔ rejects non-strings, null, undefined, empty strings, and objects (0.2064ms)
+  ✔ respects a custom fallback if provided and valid (0.2265ms)
+✔ UT-10: safe-redirect.js (4.7801ms)
+▶ UT-03: lib/tokens.js
+  ✔ generates 43-character base64url tokens (1.0354ms)
+  ✔ 1,000 generated tokens are all distinct and strictly formatted (5.1193ms)
+  ✔ hashSessionToken computes deterministic 32-byte SHA-256 Buffer digest (1.2965ms)
+  ✔ isValidTokenFormat properly validates formats and rejects invalid inputs (0.1726ms)
+✔ UT-03: lib/tokens.js (9.049ms)
+ℹ tests 481
+ℹ suites 96
+ℹ pass 481
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 544866.0454

@@ -19,6 +19,7 @@ export function renderNotFoundPage({ requestId } = {}) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found — Deskline</title>
+  <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components.css">
@@ -38,12 +39,12 @@ export function renderNotFoundPage({ requestId } = {}) {
         <a href="/" class="button button-primary">Return to Home</a>
         <a href="/shop" class="button button-secondary">Explore Shop</a>
       </div>
-      ${requestId ? `<p class="footnote" style="margin-top:2rem;color:var(--color-slate-muted,#6b7280);">Request ID: <code>${requestId}</code></p>` : ''}
+      ${requestId ? `<p class="caption text-secondary">Request ID: <code>${requestId}</code></p>` : ''}
     </div>
   </main>
   <footer class="site-footer">
     <div class="container footer-container">
-      <p class="copyright">&copy; Deskline. Educational demonstration store.</p>
+      <p class="copyright">&copy; 2026 Deskline. Demo store, no real orders.</p>
     </div>
   </footer>
 </body>

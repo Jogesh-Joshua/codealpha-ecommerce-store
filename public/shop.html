@@ -8,6 +8,9 @@
   <title>Shop — Deskline</title>
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
   <link rel="alternate icon" href="/favicon.ico">
+  <link rel="preload" href="/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components.css">
@@ -25,11 +28,35 @@
   <!-- Header (Section E0) -->
   <header class="site-header">
     <div class="container header-container">
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
       <nav class="header-nav" aria-label="Main navigation">
         <a href="/" class="brand-logo" aria-label="Deskline home">Deskline</a>
         <a href="/shop" class="nav-link" aria-current="page">Shop</a>
-        <a href="/#categories" class="nav-link">Categories</a>
+        <div class="categories-dropdown">
+          <button type="button" class="nav-link categories-trigger" id="categories-trigger" aria-expanded="false" aria-controls="categories-panel">
+            <span>Categories</span>
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="categories-panel" id="categories-panel" hidden>
+            <a href="/shop" class="categories-panel__item">All products</a>
+            <a href="/shop?category=desk-mats" class="categories-panel__item">Desk mats</a>
+            <a href="/shop?category=charging-cables" class="categories-panel__item">Charging &amp; cables</a>
+            <a href="/shop?category=stands-risers" class="categories-panel__item">Stands &amp; risers</a>
+            <a href="/shop?category=lighting" class="categories-panel__item">Lighting</a>
+            <a href="/shop?category=organizers" class="categories-panel__item">Organizers</a>
+          </div>
+        </div>
       </nav>
+
       <div class="header-actions">
         <a href="/login" class="nav-link">Sign in</a>
         <a href="/cart" class="cart-link" aria-label="Cart">
@@ -41,11 +68,42 @@
           <span>Cart</span>
           <span class="cart-badge" data-count="0"></span>
         </a>
+        <div id="cart-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
       </div>
     </div>
   </header>
 
-  <main class="main-content" id="main">
+  <!-- Mobile Drawer Dialog (Section E0) -->
+  <dialog id="mobile-drawer" class="mobile-drawer" aria-label="Navigation menu">
+    <div class="mobile-drawer__header">
+      <a href="/" class="brand-logo" aria-label="Deskline home">Deskline</a>
+      <button type="button" class="mobile-drawer__close" id="drawer-close" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <form action="/shop" method="GET" class="mobile-drawer__search" role="search">
+      <label for="drawer-search-input-shop" class="visually-hidden">Search products</label>
+      <input type="search" id="drawer-search-input-shop" name="search" placeholder="Search products…" class="field-input">
+    </form>
+    <nav class="mobile-drawer__nav" aria-label="Mobile navigation">
+      <a href="/shop" class="mobile-drawer__link">All products</a>
+      <a href="/shop?category=desk-mats" class="mobile-drawer__link">Desk mats</a>
+      <a href="/shop?category=charging-cables" class="mobile-drawer__link">Charging &amp; cables</a>
+      <a href="/shop?category=stands-risers" class="mobile-drawer__link">Stands &amp; risers</a>
+      <a href="/shop?category=lighting" class="mobile-drawer__link">Lighting</a>
+      <a href="/shop?category=organizers" class="mobile-drawer__link">Organizers</a>
+    </nav>
+    <div class="mobile-drawer__divider" role="separator"></div>
+    <div class="mobile-drawer__account" id="drawer-account-block">
+      <a href="/login" class="button button-primary button-full">Sign in</a>
+      <a href="/register" class="button button-secondary button-full">Create account</a>
+    </div>
+  </dialog>
+
+  <main class="main-content" id="main" tabindex="-1">
     <div class="container">
       <!-- Title Row (Section E2) -->
       <div class="shop-header">
@@ -271,6 +329,8 @@
       </div>
     </div>
   </footer>
+  <script type="module" src="/js/header.js"></script>
+  <script type="module" src="/js/shop.js"></script>
 </body>
 </html>
 

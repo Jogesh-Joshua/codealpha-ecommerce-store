@@ -86,6 +86,10 @@ export function errorHandler() {
       code = status >= 500 ? 'INTERNAL_ERROR' : 'ERROR';
     }
 
+    if ((status === 429 || code === 'RATE_LIMITED') && err.retryAfter) {
+      res.setHeader('Retry-After', String(err.retryAfter));
+    }
+
     res.locals.errorCode = code;
 
     if (isApi) {

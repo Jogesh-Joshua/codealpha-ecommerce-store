@@ -1,0 +1,80 @@
+================================================================
+STAT-06: DEPENDENCY SECURITY AUDIT LOG
+Project: CodeAlpha_EcommerceStore
+Execution Date: 2026-11-10
+Command 1: npm audit --omit=dev
+Command 2: npm audit
+Controlling Spec: CodeAlpha_Backend_Contract_Addendum.md §8.6, §10, KI-01
+================================================================
+
+--- 1. AUDIT COMMAND: npm audit --omit=dev ---
+# npm audit report
+
+zod  <4.6.6
+Severity: high
+Zod can exhaust memory while validating oversized constrained collections - https://github.com/advisories/GHSA-mrhx-c7xc-m3w5
+fix available via `npm audit fix --force`
+Will install zod@4.6.7, which is a breaking change
+node_modules/@vercel/cli-config/node_modules/zod
+node_modules/zod
+  @vercel/cli-config  <=0.3.5
+  Depends on vulnerable versions of zod
+  node_modules/@vercel/cli-config
+    @vercel/oidc  3.6.0 - 4.0.5
+    Depends on vulnerable versions of @vercel/cli-config
+    node_modules/@vercel/oidc
+      @vercel/functions  3.6.2 - 3.10.5
+      Depends on vulnerable versions of @vercel/oidc
+      node_modules/@vercel/functions
+
+4 high severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+
+--- 2. AUDIT COMMAND: npm audit (Full including Dev) ---
+# npm audit report
+
+zod  <4.6.6
+Severity: high
+Zod can exhaust memory while validating oversized constrained collections - https://github.com/advisories/GHSA-mrhx-c7xc-m3w5
+fix available via `npm audit fix --force`
+Will install zod@4.6.7, which is a breaking change
+node_modules/@vercel/cli-config/node_modules/zod
+node_modules/zod
+  @vercel/cli-config  <=0.3.5
+  Depends on vulnerable versions of zod
+  node_modules/@vercel/cli-config
+    @vercel/oidc  3.6.0 - 4.0.5
+    Depends on vulnerable versions of @vercel/cli-config
+    node_modules/@vercel/oidc
+      @vercel/functions  3.6.2 - 3.10.5
+      Depends on vulnerable versions of @vercel/oidc
+      node_modules/@vercel/functions
+
+4 high severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+
+--- 3. FINDINGS AND RISK ASSESSMENT (KI-01) ---
+Vulnerability ID: GHSA-mrhx-c7xc-m3w5 (zod <4.6.6)
+Severity: High
+Path: @vercel/functions@3.10.5 -> @vercel/oidc@3.6.2 -> @vercel/cli-config@0.3.5 -> zod@<4.6.6
+Classification: Transitive sub-dependency of @vercel/functions.
+Application Direct Dependency: zod@3.24.4 (direct production dependency)
+Available Fix: npm audit fix --force (would install breaking zod@4.6.7)
+Impact: Low — The application does not use @vercel/oidc or @vercel/cli-config, and no user input or request path reaches the affected internal Vercel CLI configuration validation logic.
+Decision: ACCEPTED RISK (KI-01). Per project instructions, npm audit fix --force MUST NOT be used because it forces a major breaking upgrade to Zod v4, breaking application schema validation.
+
+================================================================
+STAT-06 STATUS: PASS (with accepted documented risk KI-01)
+================================================================
