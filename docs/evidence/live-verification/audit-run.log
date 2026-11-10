@@ -1,0 +1,79 @@
+=== DESKLINE INDEPENDENT LIVE AUDIT EXECUTION ===
+Target: https://codealpha-ecommerce-store-sable.vercel.app
+
+[2026-11-10T11:29:11.248Z] Chrome launched successfully on port 9557
+[2026-11-10T11:29:11.339Z] --- Testing Route 1: Home (/) Desktop ---
+[2026-11-10T11:29:12.508Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:14.156Z] Home Desktop: H1="Accessories for the desk you work at", CategoryRows=5, Hotspots=4, FeaturedProducts=4
+[2026-11-10T11:29:14.156Z] --- Testing Route 1: Home (/) Mobile ---
+[2026-11-10T11:29:15.277Z] --- Testing Route 2: Shop (/shop) Desktop ---
+[2026-11-10T11:29:15.737Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:17.596Z] Shop Desktop: Products=12, Summary="No products"
+[2026-11-10T11:29:17.596Z] --- Testing Route 2: Shop (/shop) Mobile ---
+[2026-11-10T11:29:18.719Z] --- Testing Search in Shop ("stand") ---
+[2026-11-10T11:29:20.281Z] Search ("stand"): Count=3
+[2026-11-10T11:29:20.282Z] --- Testing Sort in Shop (price_desc) ---
+[2026-11-10T11:29:21.104Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:22.915Z] Sort (price_desc): First item="Ultra-slim monitor light bar with asymmetric glare-free optics and wireless dial", Price="₹3,999"
+[2026-11-10T11:29:22.916Z] --- Testing Sort in Shop (price_asc) ---
+[2026-11-10T11:29:23.245Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:25.105Z] Sort (price_asc): First item="Cable clips, set of 6", Price="₹249"
+[2026-11-10T11:29:25.105Z] --- Testing Category Filter: desk-mats ---
+[2026-11-10T11:29:25.634Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:27.410Z] Category [desk-mats]: Count=4, ActiveChip="Desk mats"
+[2026-11-10T11:29:27.410Z] --- Testing Category Filter: charging-cables ---
+[2026-11-10T11:29:27.875Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:29.696Z] Category [charging-cables]: Count=4, ActiveChip="Charging & cables"
+[2026-11-10T11:29:29.696Z] --- Testing Category Filter: stands-risers ---
+[2026-11-10T11:29:30.107Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:31.962Z] Category [stands-risers]: Count=4, ActiveChip="Stands & risers"
+[2026-11-10T11:29:31.962Z] --- Testing Category Filter: lighting ---
+[2026-11-10T11:29:32.427Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:34.209Z] Category [lighting]: Count=4, ActiveChip="Lighting"
+[2026-11-10T11:29:34.209Z] --- Testing Category Filter: organizers ---
+[2026-11-10T11:29:34.616Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:36.493Z] Category [organizers]: Count=4, ActiveChip="Organizers"
+[2026-11-10T11:29:36.493Z] --- Testing Pagination (/shop?page=2) ---
+[2026-11-10T11:29:36.914Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:38.761Z] Shop Page 2: Count=8, FirstTitle="Vertical laptop dock"
+[2026-11-10T11:29:38.761Z] --- Testing Route 9: Product Detail Desktop ---
+[2026-11-10T11:29:39.124Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:39.522Z] [HTTP ERROR 404] https://codealpha-ecommerce-store-sable.vercel.app/images/products/felt-desk-mat-charcoal-1.webp
+[2026-11-10T11:29:39.523Z] [HTTP ERROR 404] https://codealpha-ecommerce-store-sable.vercel.app/images/products/felt-desk-mat-charcoal-2.webp
+[2026-11-10T11:29:39.523Z] [HTTP ERROR 404] https://codealpha-ecommerce-store-sable.vercel.app/images/products/felt-desk-mat-charcoal-3.webp
+[2026-11-10T11:29:41.944Z] PDP Desktop: Title="Felt desk mat, charcoal", Price="₹1,499", Pill="In stock", SkeletonPresent=false
+[2026-11-10T11:29:41.944Z] Testing Add to Cart on PDP...
+[2026-11-10T11:29:42.953Z] Add to cart action: ButtonText="Added to cart", Badge: 0 -> 1
+[2026-11-10T11:29:42.953Z] --- Testing Route 9: Product Detail Mobile ---
+[2026-11-10T11:29:44.063Z] --- Testing Route 10: Cart (/cart) Desktop ---
+[2026-11-10T11:29:44.447Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:46.413Z] Cart Desktop: Items=1, Subtotal="₹1,499", Shipping="₹99", Total="₹1,598"
+[2026-11-10T11:29:46.413Z] --- Testing Route 10: Cart (/cart) Mobile ---
+[2026-11-10T11:29:47.531Z] --- Testing Route 12: Login (/login) Desktop ---
+[2026-11-10T11:29:47.868Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:48.111Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:49.257Z] --- Testing Route 12: Login (/login) Mobile ---
+[2026-11-10T11:29:50.360Z] Testing invalid credentials alert...
+[2026-11-10T11:29:51.185Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/login
+[2026-11-10T11:29:51.881Z] Invalid login alert text: "Email or password is incorrect. Check both and try again."
+[2026-11-10T11:29:51.881Z] --- Testing Route 11: Register (/register) Desktop ---
+[2026-11-10T11:29:52.282Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:52.521Z] [HTTP ERROR 401] https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me
+[2026-11-10T11:29:53.643Z] --- Testing Route 11: Register (/register) Mobile ---
+[2026-11-10T11:29:54.744Z] Registering isolated test account: verifier.1794310194744@deskline.internal
+[2026-11-10T11:29:57.770Z] Post-registration URL: https://codealpha-ecommerce-store-sable.vercel.app/
+[2026-11-10T11:29:57.770Z] --- Testing Route 13: Checkout (/checkout) ---
+[2026-11-10T11:30:02.450Z] Filling checkout form with safe demo data...
+[2026-11-10T11:30:02.460Z] Placing demo order...
+[2026-11-10T11:30:06.481Z] Post-checkout URL: https://codealpha-ecommerce-store-sable.vercel.app/order?id=6a7de91e-452f-4ef1-af55-e67096ba928f
+[2026-11-10T11:30:06.528Z] Order placed successfully! Heading="Order placed", Meta="Order placedDL-100002Thanks, Evaluator. We've saved order DL-100002. Nothing was charged and nothing will ship.ItemsFelt desk mat, charcoalQuantity: 1"
+[2026-11-10T11:30:06.528Z] --- Testing Route 14: Orders (/orders) Desktop ---
+[2026-11-10T11:30:09.280Z] Orders Desktop: Count=0, FirstOrder="undefined"
+[2026-11-10T11:30:09.280Z] --- Testing Route 14: Orders (/orders) Mobile ---
+[2026-11-10T11:30:10.367Z] === AUDIT COMPLETE ===
+[2026-11-10T11:30:10.367Z] Total routes verified: 18
+[2026-11-10T11:30:10.367Z] Total console logs captured: 0
+[2026-11-10T11:30:10.368Z] Total uncaught exceptions: 0
+[2026-11-10T11:30:10.368Z] Total HTTP network errors: 20
+[2026-11-10T11:30:10.369Z] Audit summary written to D:\College\Project\CodeAlpha_EcommerceStore\docs\evidence\live-verification\audit-summary.json
+[2026-11-10T11:30:11.019Z] Browser closed cleanly.

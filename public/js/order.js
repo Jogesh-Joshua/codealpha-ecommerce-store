@@ -169,7 +169,7 @@ function renderOrderView(container, order, user) {
     // Thumbnail
     const thumb = el('div', { className: 'cart-item-thumb' });
     const img = el('img', {
-      src: item.imageUrl || placeholderSrc,
+      src: item.image?.url || item.imageUrl || placeholderSrc,
       alt: item.productName || item.name || '',
       width: '96',
       height: '120',

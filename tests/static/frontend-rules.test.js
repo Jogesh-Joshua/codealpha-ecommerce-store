@@ -221,7 +221,7 @@ describe('Frontend Static Checks (Phase 7)', () => {
       const files = await getFiles(dir);
       for (const file of files) {
         // Skip binary or font files
-        if (/\.(woff2|png|ico|jpg|jpeg)$/.test(file)) continue;
+        if (/\.(woff2|png|ico|jpg|jpeg|webp)$/.test(file)) continue;
 
         const content = await readFile(file, 'utf8');
 

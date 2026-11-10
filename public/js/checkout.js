@@ -266,7 +266,7 @@ function renderCheckoutView(container, user, cartData) {
     const itemRow = el('div', { className: 'checkout-line-item' });
     const thumbWrap = el('div', { className: 'checkout-item-thumb-wrap' });
     const thumbImg = el('img', {
-      src: line.imageUrl || `/images/placeholders/${line.categorySlug || 'desk-mats'}.svg`,
+      src: line.image?.url || line.imageUrl || `/images/placeholders/${line.categorySlug || 'desk-mats'}.svg`,
       alt: line.name || '',
       width: '56',
       height: '70',

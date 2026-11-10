@@ -1,0 +1,178 @@
+{
+  "routes": {
+    "/ [desktop]": {
+      "status": "PASS",
+      "h1": "Accessories for the desk you work at",
+      "categories": 5,
+      "hotspots": 4,
+      "featured": 4
+    },
+    "/ [mobile]": {
+      "status": "PASS"
+    },
+    "/shop [desktop]": {
+      "status": "PASS",
+      "count": 12,
+      "summary": "No products"
+    },
+    "/shop [mobile]": {
+      "status": "PASS"
+    },
+    "/shop?q=stand": {
+      "status": "PASS",
+      "count": 3
+    },
+    "/shop [sorting]": {
+      "status": "PASS",
+      "price_desc_first": "Ultra-slim monitor light bar with asymmetric glare-free optics and wireless dial (₹3,999)",
+      "price_asc_first": "Cable clips, set of 6 (₹249)"
+    },
+    "/shop?category=desk-mats": {
+      "status": "PASS",
+      "count": 4,
+      "activeFilter": "Desk mats"
+    },
+    "/shop?category=charging-cables": {
+      "status": "PASS",
+      "count": 4,
+      "activeFilter": "Charging & cables"
+    },
+    "/shop?category=stands-risers": {
+      "status": "PASS",
+      "count": 4,
+      "activeFilter": "Stands & risers"
+    },
+    "/shop?category=lighting": {
+      "status": "PASS",
+      "count": 4,
+      "activeFilter": "Lighting"
+    },
+    "/shop?category=organizers": {
+      "status": "PASS",
+      "count": 4,
+      "activeFilter": "Organizers"
+    },
+    "/shop?page=2": {
+      "status": "PASS",
+      "count": 8,
+      "firstItem": "Vertical laptop dock"
+    },
+    "/product?slug=felt-desk-mat-charcoal": {
+      "status": "PASS",
+      "title": "Felt desk mat, charcoal",
+      "price": "₹1,499",
+      "pill": "In stock",
+      "cartCount": "1"
+    },
+    "/cart": {
+      "status": "PASS",
+      "items": 1,
+      "subtotal": "₹1,499",
+      "shipping": "₹99",
+      "total": "₹1,598"
+    },
+    "/login": {
+      "status": "PASS",
+      "invalidAlert": "Email or password is incorrect. Check both and try again."
+    },
+    "/register": {
+      "status": "PASS",
+      "registeredEmail": "verifier.1794310194744@deskline.internal",
+      "postRegUrl": "https://codealpha-ecommerce-store-sable.vercel.app/"
+    },
+    "/checkout": {
+      "status": "PASS",
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/order?id=6a7de91e-452f-4ef1-af55-e67096ba928f",
+      "heading": "Order placed",
+      "details": "Order placedDL-100002Thanks, Evaluator. We've saved order DL-100002. Nothing was charged and nothing will ship.ItemsFelt desk mat, charcoalQuantity: 1"
+    },
+    "/orders": {
+      "status": "PASS",
+      "count": 0
+    }
+  },
+  "consoleLogs": [],
+  "exceptions": [],
+  "networkErrors": [
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/images/products/felt-desk-mat-charcoal-1.webp",
+      "status": 404
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/images/products/felt-desk-mat-charcoal-2.webp",
+      "status": 404
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/images/products/felt-desk-mat-charcoal-3.webp",
+      "status": 404
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/login",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "https://codealpha-ecommerce-store-sable.vercel.app/api/auth/me",
+      "status": 401
+    }
+  ]
+}

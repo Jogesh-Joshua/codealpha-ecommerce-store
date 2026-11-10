@@ -275,7 +275,7 @@ async function fetchAndRender(state, scrollToResults = false) {
     if (!data) throw new Error('No data received');
 
     const items = data.items || [];
-    const total = data.total || 0;
+    const total = data.pagination?.total ?? data.total ?? items.length;
     const totalPages = Math.max(1, Math.ceil(total / 12));
 
     // Page beyond last valid page handling (E2 rule)

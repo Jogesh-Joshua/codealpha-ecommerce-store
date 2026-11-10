@@ -68,7 +68,7 @@ export async function initOrdersPage() {
   // 3. Fetch Orders
   try {
     const res = await api.get('/api/orders');
-    allOrders = res?.data?.orders || [];
+    allOrders = res?.data?.items || res?.data?.orders || [];
     renderOrdersList(contentEl);
   } catch {
     clearChildren(contentEl);
@@ -168,14 +168,14 @@ function createOrderCard(order) {
   const bottomRow = el('div', { className: 'order-card-bottom' });
 
   const leftGroup = el('div', { className: 'order-thumbs-strip' });
-  const items = order.items || [];
+  const items = order.items || order.thumbnails || [];
   const previewItems = items.slice(0, 3);
 
   for (const it of previewItems) {
     const thumbBox = el('div', { className: 'order-thumb-mini' });
     const img = el('img', {
-      src: it.imageUrl || `/images/placeholders/${it.categorySlug || 'desk-mats'}.svg`,
-      alt: it.productName || it.name || '',
+      src: it.url || it.imageUrl || it.image?.url || `/images/placeholders/${it.categorySlug || 'desk-mats'}.svg`,
+      alt: it.alt || it.productName || it.name || '',
       width: '48',
       height: '60',
       loading: 'lazy',

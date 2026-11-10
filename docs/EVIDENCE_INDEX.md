@@ -62,20 +62,57 @@ All Phase 8 manual checks were executed via Chrome DevTools Protocol against the
 
 ---
 
-## 5. Production Deployment & Live Verification Evidence (Phase 11)
+## 5. Production Deployment & Live Verification Evidence (Phase 11 & Final Master Audit)
 
 | Gate ID | Evidence Artifact | Verification Scope & Live Metrics | Status |
 |---|---|---|---|
 | **DEP-01, DEP-02, DEP-05..07, DEP-10, DEP-12..15, DEP-17** | [`DEP-deployment-audit.log`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/phase11/DEP-deployment-audit.log) | Live deployment audit against [`https://codealpha-ecommerce-store-sable.vercel.app`](https://codealpha-ecommerce-store-sable.vercel.app): verified zero startup crash (DEP-01); static asset cache headers (DEP-02); database pool active with `/api/health?deep=1` returning `database: "up"` (DEP-05, DEP-17); 404 HTML vs JSON boundaries (DEP-06); security headers nosniff, no-referrer, CSP, helmet, X-Powered-By disabled (DEP-07); zero secrets in client assets (DEP-10); client IP handling (DEP-12); request ID tracking (DEP-13); 30/30 rapid requests 200 OK with p50=310ms and zero connection drops (DEP-14); zero CSP violations (DEP-15). | **PASS** |
+| **DEP-03, DEP-04, DEP-08, DEP-09, DEP-18, DEP-19, MAN-23** | [`DEP-live-verification-final.log`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/phase11/DEP-live-verification-final.log) | Final production verification of commit `03e15b8` deployed live: all 8 cleanUrls views return 200 (DEP-03); catalog API returns 20 products (DEP-04); `__Host-deskline_session` cookie issued on HTTPS with HttpOnly, Secure, SameSite=Lax (DEP-08); order DL-100001 placed with exact paise math (DEP-09); idempotency replay returns 200 with Idempotent-Replay header (DEP-18); login limiter returns 429 on 6th attempt (DEP-19); order persisted in Neon production DB (MAN-23). | **PASS** |
 | **DEP-16 / MAN-18 (Home)** | [`lighthouse-home.json`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/phase11/lighthouse-home.json) | Mobile Lighthouse audit on live Home page (`/`): **Performance: 100**, **Accessibility: 100**, **Best Practices: 100**, **SEO: 100**. | **PASS** |
 | **DEP-16 / MAN-18 (Shop)** | [`lighthouse-shop.json`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/phase11/lighthouse-shop.json) | Mobile Lighthouse audit on live Shop catalog (`/shop`): **Performance: 100**, **Accessibility: 94**, **Best Practices: 100**, **SEO: 100**. | **PASS** |
 
 ---
 
-## 6. Master Status Ledger & Architectural Audit
+## 6. Independent Live Real-Browser Verification Artifacts
+
+All artifacts generated during the automated Chromium browser audit against `https://codealpha-ecommerce-store-sable.vercel.app` (commit `03e15b8`) on 10 November 2026:
+
+| Evidence File | Viewport | Scope / Verified Feature | Status |
+|---|:---:|---|:---:|
+| [`audit-run.log`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/audit-run.log) | CLI | Execution trace of automated CDP audit script across 13 routes | **PASS** |
+| [`audit-summary.json`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/audit-summary.json) | Data | Machine-readable verification results, route counts, and network events | **PASS** |
+| [`route-home-desktop.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-home-desktop.png) | Desktop `1280px` | Home page layout, hero, 4 hotspots, 5 categories, 4 featured products | **PASS** |
+| [`route-home-mobile.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-home-mobile.png) | Mobile `360px` | Mobile stacked hero, value propositions, and navigation drawer trigger | **PASS** |
+| [`route-shop-desktop.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-shop-desktop.png) | Desktop `1280px` | Shop catalog page 1 (12 products displayed), toolbar, search, filter chips | **PASS** |
+| [`route-shop-mobile.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-shop-mobile.png) | Mobile `360px` | Responsive 2-column mobile catalog grid | **PASS** |
+| [`route-shop-search.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-shop-search.png) | Desktop `1280px` | Real-time catalog search for `"stand"` (3 matching products) | **PASS** |
+| [`route-shop-sort-price-desc.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-shop-sort-price-desc.png) | Desktop `1280px` | Catalog sort high-to-low (*Ultra-slim monitor light bar*, ₹3,999 first) | **PASS** |
+| [`route-shop-filter-desk-mats.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-shop-filter-desk-mats.png) | Desktop `1280px` | Filter category: Desk mats (exactly 4 products, chip active) | **PASS** |
+| [`route-shop-filter-charging-cables.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-shop-filter-charging-cables.png) | Desktop `1280px` | Filter category: Charging & cables (exactly 4 products, chip active) | **PASS** |
+| [`route-shop-filter-stands-risers.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-shop-filter-stands-risers.png) | Desktop `1280px` | Filter category: Stands & risers (exactly 4 products, chip active) | **PASS** |
+| [`route-shop-filter-lighting.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-shop-filter-lighting.png) | Desktop `1280px` | Filter category: Lighting (exactly 4 products, chip active) | **PASS** |
+| [`route-shop-filter-organizers.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-shop-filter-organizers.png) | Desktop `1280px` | Filter category: Organizers (exactly 4 products, chip active) | **PASS** |
+| [`route-shop-page2.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-shop-page2.png) | Desktop `1280px` | Shop catalog page 2 (remaining 8 products, zero overlap with page 1) | **PASS** |
+| [`route-product-detail-desktop.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-product-detail-desktop.png) | Desktop `1280px` | PDP hydration from skeleton, title, price, stock badge, Add to cart feedback | **PASS** |
+| [`route-product-detail-mobile.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-product-detail-mobile.png) | Mobile `360px` | Mobile stacked PDP gallery and purchase panel | **PASS** |
+| [`route-cart-desktop.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-cart-desktop.png) | Desktop `1280px` | Cart view: line item, stepper, subtotal (₹1,499), shipping (₹99), total (₹1,598) | **PASS** |
+| [`route-cart-mobile.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-cart-mobile.png) | Mobile `360px` | Mobile cart view with responsive item rows and summary panel | **PASS** |
+| [`route-login-desktop.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-login-desktop.png) | Desktop `1280px` | Sign in view with invalid credential notification banner | **PASS** |
+| [`route-login-mobile.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-login-mobile.png) | Mobile `360px` | Mobile sign in form with password show/hide toggle | **PASS** |
+| [`route-register-desktop.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-register-desktop.png) | Desktop `1280px` | Account registration view with split media panel | **PASS** |
+| [`route-register-mobile.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-register-mobile.png) | Mobile `360px` | Mobile registration form with full-width inputs | **PASS** |
+| [`route-checkout-desktop.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-checkout-desktop.png) | Desktop `1280px` | Checkout view with shipping address form and demo order notice | **PASS** |
+| [`route-checkout-confirmation.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-checkout-confirmation.png) | Desktop `1280px` | Order placement receipt (`DL-100002`) with order breakdown and items | **PASS** |
+| [`route-orders-desktop.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-orders-desktop.png) | Desktop `1280px` | Order history page with user authentication metadata and sign out button | **PASS** |
+| [`route-orders-mobile.png`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/evidence/live-verification/route-orders-mobile.png) | Mobile `360px` | Mobile order history page | **PASS** |
+
+---
+
+## 7. Master Status Ledger & Architectural Audit
 
 - Master Status Ledger: [`docs/STATUS.md`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/STATUS.md)
 - Architectural & Code Review: [`docs/AUDIT.md`](file:///D:/College/Project/CodeAlpha_EcommerceStore/docs/AUDIT.md)
 - Image Provenance & Attribution: [`public/images/CREDITS.md`](file:///D:/College/Project/CodeAlpha_EcommerceStore/public/images/CREDITS.md)
 - Font Assets & OFL Licenses: [`public/fonts/README.md`](file:///D:/College/Project/CodeAlpha_EcommerceStore/public/fonts/README.md)
+
 

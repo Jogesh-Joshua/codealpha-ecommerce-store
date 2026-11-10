@@ -87,7 +87,7 @@ function renderProductDetail(container, product) {
 
   // ── Gallery Column (Columns 1-7) ──
   const galleryCol = el('div', { className: 'product-gallery' });
-  const placeholderSrc = `/images/placeholders/${product.categorySlug || 'desk-mats'}.svg`;
+  const placeholderSrc = `/images/placeholders/${product.category?.slug || product.categorySlug || 'desk-mats'}.svg`;
 
   const imagesList = Array.isArray(product.images) && product.images.length > 0
     ? product.images
@@ -173,7 +173,15 @@ function renderProductDetail(container, product) {
   accordionGroup.appendChild(detailsAcc);
 
   // Specifications Accordion
-  if (product.specs && typeof product.specs === 'object' && Object.keys(product.specs).length > 0) {
+  const rawSpecs = product.specs;
+  let specEntries = [];
+  if (Array.isArray(rawSpecs)) {
+    specEntries = rawSpecs.map(s => ({ label: s.label || s.key || '', value: String(s.value || '') }));
+  } else if (rawSpecs && typeof rawSpecs === 'object') {
+    specEntries = Object.entries(rawSpecs).map(([label, value]) => ({ label, value: String(value) }));
+  }
+
+  if (specEntries.length > 0) {
     const specsAcc = el('details', { className: 'accordion-item' });
     const specsSummary = el('summary', { className: 'accordion-summary' },
       el('span', { text: 'Specifications' }),
@@ -182,10 +190,10 @@ function renderProductDetail(container, product) {
     const specsContent = el('div', { className: 'accordion-content' });
     const dl = el('dl', { className: 'specs-table' });
 
-    for (const [key, val] of Object.entries(product.specs)) {
+    for (const item of specEntries) {
       const row = el('div', { className: 'specs-row' },
-        el('dt', { text: key }),
-        el('dd', { text: String(val) })
+        el('dt', { text: item.label }),
+        el('dd', { text: item.value })
       );
       dl.appendChild(row);
     }
@@ -215,9 +223,9 @@ function renderProductDetail(container, product) {
 
   // Category link
   const catLink2 = el('a', {
-    href: `/shop?category=${encodeURIComponent(product.categorySlug || '')}`,
+    href: `/shop?category=${encodeURIComponent(product.category?.slug || product.categorySlug || '')}`,
     className: 'product-category-link',
-    text: product.categoryName || ''
+    text: product.category?.name || product.categoryName || ''
   });
   panelCol.appendChild(catLink2);
 

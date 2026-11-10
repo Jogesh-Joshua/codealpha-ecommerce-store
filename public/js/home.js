@@ -135,12 +135,13 @@ async function loadSpotlight() {
     if (btnEl) btnEl.href = `/product?slug=${encodeURIComponent(product.slug)}`;
 
     const imgEl = panel.querySelector('.spotlight-image-well img');
-    if (imgEl && product.primaryImageUrl) {
-      imgEl.src = product.primaryImageUrl;
+    const spotlightImg = product.image?.url || product.primaryImageUrl;
+    if (imgEl && spotlightImg) {
+      imgEl.src = spotlightImg;
       imgEl.alt = `${product.name} spotlight`;
       imgEl.onerror = () => {
         imgEl.onerror = null;
-        imgEl.src = `/images/placeholders/${product.categorySlug || 'lighting'}.svg`;
+        imgEl.src = `/images/placeholders/${product.category?.slug || product.categorySlug || 'lighting'}.svg`;
       };
     }
   } catch {
@@ -163,8 +164,9 @@ export function createProductCard(product) {
     'aria-hidden': 'true'
   });
 
-  const placeholderSrc = `/images/placeholders/${product.categorySlug || 'desk-mats'}.svg`;
-  const imgSrc = product.primaryImageUrl || placeholderSrc;
+  const categorySlug = product.category?.slug || product.categorySlug || 'desk-mats';
+  const placeholderSrc = `/images/placeholders/${categorySlug}.svg`;
+  const imgSrc = product.image?.url || product.primaryImageUrl || placeholderSrc;
 
   const img = el('img', {
     src: imgSrc,

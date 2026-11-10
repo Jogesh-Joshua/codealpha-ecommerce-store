@@ -135,7 +135,7 @@ function renderCartView(container, { lines = [], summary = {}, issues = [], vali
     // Thumbnail
     const thumb = el('div', { className: 'cart-item-thumb' });
     const img = el('img', {
-      src: line.imageUrl || placeholderSrc,
+      src: line.image?.url || line.imageUrl || placeholderSrc,
       alt: line.name || 'Product',
       width: '96',
       height: '120',
